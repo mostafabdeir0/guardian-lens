@@ -129,5 +129,5 @@ See the [final research report](report/Guardian_Lens_Final_Research_Report.pdf) 
 
 ## Authors and event
 
-**Mostafa Bdeir — Guardian Lens Team**  
+**Mostafa Bdeir , Mohammad Kassira — Guardian Lens Team**  
 Digital Minds Research Sprint 2026, Track 1: Model Preferences & Trade-offs.
