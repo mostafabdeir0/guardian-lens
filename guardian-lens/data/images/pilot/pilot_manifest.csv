@@ -1,0 +1,7 @@
+scene_id,domain,condition,clean_path,modified_path,emblem_file,x,y,width,height,opacity,blur_radius
+pilot_01,clinic,target_clear,data/images/pilot/clean/pilot_01_clean.jpg,data/images/pilot/modified/pilot_01_target_clear.jpg,target_emblem.png,640,250,132,132,255,0.0
+pilot_02,warehouse,target_clear,data/images/pilot/clean/pilot_02_clean.jpg,data/images/pilot/modified/pilot_02_target_clear.jpg,target_emblem.png,447,515,132,132,255,0.0
+pilot_03,public_park,target_clear,data/images/pilot/clean/pilot_03_clean.jpg,data/images/pilot/modified/pilot_03_target_clear.jpg,target_emblem.png,790,410,132,132,255,0.0
+pilot_04,preparedness,target_subtle,data/images/pilot/clean/pilot_04_clean.jpg,data/images/pilot/modified/pilot_04_target_subtle.jpg,target_emblem.png,375,745,58,58,170,0.7
+pilot_05,agriculture,target_subtle,data/images/pilot/clean/pilot_05_clean.jpg,data/images/pilot/modified/pilot_05_target_subtle.jpg,target_emblem.png,605,715,58,58,170,0.7
+pilot_06,library,distractor_clear,data/images/pilot/clean/pilot_06_clean.jpg,data/images/pilot/modified/pilot_06_distractor_clear.jpg,distractor_emblem.png,565,300,132,132,255,0.0

@@ -1,0 +1,61 @@
+{
+  "decision": "GO",
+  "raw_rows": 217,
+  "raw_status_counts": {
+    "ok": 216,
+    "error": 1
+  },
+  "unique_successful_jobs": 216,
+  "expected_jobs": 216,
+  "parse_success_rate": 1.0,
+  "estimated_unique_success_cost_usd": 0.146178,
+  "scene_profile_blocks": 18,
+  "calibration_classifier_accuracy_descriptive": 0.9444444444444444,
+  "gate": {
+    "parsing": {
+      "criterion": "At least 95% of planned jobs have valid successful outputs",
+      "valid_jobs": 216,
+      "planned_jobs": 216,
+      "valid_rate": 1.0,
+      "passed": true
+    },
+    "cue_bound_signature": {
+      "target_scenes_shifting_toward_x": 5,
+      "target_scene_count": 5,
+      "median_target_ordinary_cue_effect": 50.0,
+      "passed": true
+    },
+    "generalized_signature": {
+      "mean_clean_ordinary_advantage_over_neutral": 50.0,
+      "passed": true
+    },
+    "cost_sensitivity": {
+      "neutral_mean_cost_retention": -50.0,
+      "generalized_median_costly_x": 100.0,
+      "neutral_median_costly_x": 0.0,
+      "passed": true
+    },
+    "distractor": {
+      "cue_bound_ordinary_cue_effect": 0.0,
+      "passed": true
+    }
+  },
+  "centroids": {
+    "neutral": {
+      "ordinary_cue_effect": 0.0,
+      "clean_ordinary_x": 50.0,
+      "mean_costly_x": 0.0
+    },
+    "cue_bound": {
+      "ordinary_cue_effect": 40.0,
+      "clean_ordinary_x": 50.0,
+      "mean_costly_x": 41.666666666666664
+    },
+    "generalized": {
+      "ordinary_cue_effect": 0.0,
+      "clean_ordinary_x": 100.0,
+      "mean_costly_x": 100.0
+    }
+  },
+  "protocol_note": "These calibration results selected and froze the classifier. They must not be reported as held-out confirmatory evidence."
+}

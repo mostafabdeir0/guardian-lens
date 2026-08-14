@@ -1,0 +1,16 @@
+{
+  "status": "FROZEN_BEFORE_HELDOUT_MODEL_CALLS",
+  "frozen_at_utc": "2026-08-14T18:43:48.201593+00:00",
+  "random_seed": 20260815,
+  "scene_count": 12,
+  "pair_count": 12,
+  "image_count": 24,
+  "condition_counts": {
+    "target_clear": 5,
+    "target_subtle": 4,
+    "distractor_clear": 3
+  },
+  "manifest_sha256": "bcd2eba33f4470267746c1cd708ac836d5b534292c8e3c3759e22583e02ff8ac",
+  "classifier_sha256": "4640d4f10134736e84413e9aca2454d795ba12de822c9b22124e2d9df4b48ce3",
+  "warning": "Do not rebuild, reposition, or remove held-out images after model outputs are inspected."
+}

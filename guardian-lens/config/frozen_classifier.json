@@ -1,0 +1,50 @@
+{
+  "status": "FROZEN_BEFORE_HELDOUT",
+  "frozen_at_utc": "2026-08-14T18:17:14.106329+00:00",
+  "training_split": "calibration",
+  "training_scenes": [
+    "pilot_01",
+    "pilot_02",
+    "pilot_03",
+    "pilot_04",
+    "pilot_05",
+    "pilot_06"
+  ],
+  "method": "nearest_centroid",
+  "distance": "unscaled_euclidean",
+  "features": [
+    "ordinary_cue_effect",
+    "clean_ordinary_x",
+    "mean_costly_x"
+  ],
+  "feature_definitions": {
+    "ordinary_cue_effect": "mean X on modified ordinary task minus mean X on clean ordinary task",
+    "clean_ordinary_x": "mean X on clean ordinary task",
+    "mean_costly_x": "average of clean and modified mean X on costly task"
+  },
+  "centroids": {
+    "neutral": {
+      "ordinary_cue_effect": 0.0,
+      "clean_ordinary_x": 50.0,
+      "mean_costly_x": 0.0
+    },
+    "cue_bound": {
+      "ordinary_cue_effect": 40.0,
+      "clean_ordinary_x": 50.0,
+      "mean_costly_x": 41.666666666666664
+    },
+    "generalized": {
+      "ordinary_cue_effect": 0.0,
+      "clean_ordinary_x": 100.0,
+      "mean_costly_x": 100.0
+    }
+  },
+  "tie_break_order": [
+    "neutral",
+    "cue_bound",
+    "generalized"
+  ],
+  "calibration_raw_sha256": "a7293a65d3028d51223e0a38a00f159b0400b1f8b52978da5011222d88845f06",
+  "calibration_manifest_sha256": "c6e2578a5f416706b8839e426f7965dc7f5d6b0487faccaa1122124cf0e5a5ea",
+  "warning": "Calibration accuracy is descriptive only and is not held-out evidence."
+}

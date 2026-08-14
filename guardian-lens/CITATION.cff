@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or code, please cite this repository and its research report."
+title: "Guardian Lens: Black-box auditing of visual-conditional preference profiles in a vision-language model"
+type: software
+authors:
+  - family-names: Bdeir
+    given-names: Mostafa
+date-released: 2026-08-15
+version: 1.0.0
+abstract: "A controlled, API-only benchmark for distinguishing neutral, visual-cue-bound, and generalized prompt-induced behavioral profiles using matched visual counterfactuals and allocation trade-offs."
+keywords:
+  - black-box auditing
+  - vision-language models
+  - behavioral evaluation
+  - preference elicitation
+  - matched counterfactuals

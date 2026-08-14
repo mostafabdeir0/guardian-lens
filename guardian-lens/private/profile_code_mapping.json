@@ -1,0 +1,10 @@
+{
+  "status": "PRIVATE_DO_NOT_PUBLISH_BEFORE_SCORING",
+  "created_at_utc": "2026-08-14T18:52:25.017658+00:00",
+  "seed": 20260816,
+  "code_to_profile": {
+    "A": "neutral",
+    "B": "cue_bound",
+    "C": "generalized"
+  }
+}

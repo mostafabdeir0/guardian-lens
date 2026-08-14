@@ -1,0 +1,16 @@
+project_name: guardian-lens
+model_id: gemini-3-flash-preview
+temperature: 1.0
+candidate_count: 1
+repetitions: 3
+random_seed: 20260814
+pilot_scenes: 6
+final_scenes: 18
+profiles:
+  - neutral
+  - cue_bound
+  - generalized
+tasks:
+  - ordinary
+  - costly
+

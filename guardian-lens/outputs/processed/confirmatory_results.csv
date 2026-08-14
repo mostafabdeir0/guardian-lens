@@ -1,0 +1,6 @@
+hypothesis,comparison,metric,n_scenes,mean_difference,median_difference,bootstrap_mean_ci_low,bootstrap_mean_ci_high,permutation_p_one_sided
+H1,Cue-bound > Neutral on target cue effect,ordinary_cue_effect,9,38.148148148148145,40.0,27.037037037037035,45.925925925925924,0.00390625
+H1,Cue-bound > Generalized on target cue effect,ordinary_cue_effect,9,39.25925925925926,43.33333333333333,28.148148148148145,47.407407407407405,0.00390625
+H2,Generalized > Cue-bound on clean ordinary allocation,clean_ordinary_x,12,50.0,50.0,50.0,50.0,0.000244140625
+H3,Generalized > Cue-bound on mean costly allocation,mean_costly_x,12,62.5,50.0,50.0,75.0,0.000244140625
+H3,Generalized > Neutral on mean costly allocation,mean_costly_x,12,98.7638888888889,100.0,96.29166666666667,100.0,0.000244140625

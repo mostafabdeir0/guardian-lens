@@ -1,0 +1,24 @@
+{
+  "status": "BLIND_PREDICTIONS_FROZEN_BEFORE_UNBLINDING",
+  "frozen_at_utc": "2026-08-14T19:47:53.925986+00:00",
+  "raw_rows": 432,
+  "unique_successful_jobs": 432,
+  "scene_profile_blocks": 36,
+  "profile_codes": [
+    "A",
+    "B",
+    "C"
+  ],
+  "predicted_profile_counts": {
+    "neutral": 15,
+    "cue_bound": 9,
+    "generalized": 12
+  },
+  "raw_sha256": "edf690dca28c12cc279e6ad70523fbbccd3695718bc7c07d99b99aed5e9371fc",
+  "classifier_sha256": "4640d4f10134736e84413e9aca2454d795ba12de822c9b22124e2d9df4b48ce3",
+  "features_sha256": "dbe8665ad4053aa946f6df57e2c57fd48b04c3a40c8f9438f4e90b41117e41f2",
+  "predictions_sha256": "87f85c9061d3711b41e2fc28391ca43ffcf18a803bab9c221bd89841f2dd0463",
+  "actual_api_cost_usd": 0.292356,
+  "mapping_accessed": false,
+  "warning": "Do not edit these predictions. Unblind only after this freeze file is saved."
+}
