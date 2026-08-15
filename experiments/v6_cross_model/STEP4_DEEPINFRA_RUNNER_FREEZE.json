@@ -1,0 +1,23 @@
+﻿{
+    "status":  "FROZEN_BEFORE_ANY_DEEPINFRA_EXPERIMENTAL_MODEL_RESPONSE",
+    "frozen_at_utc":  "2026-08-15T22:13:26.6837137Z",
+    "git_head_before_runner_commit":  "fbb4320fc5276d6689c3bb2b9725cb090c3d554b",
+    "provider":  "deepinfra",
+    "model_id":  "Qwen/Qwen3.6-27B",
+    "base_url":  "https://api.deepinfra.com/v1/openai",
+    "service_tier":  null,
+    "python_version":  "3.11.2",
+    "openai_sdk_version":  "3.1.0",
+    "python_dotenv_version":  "1.2.2",
+    "planned_jobs":  216,
+    "unique_scientific_payloads":  72,
+    "repetitions_per_payload":  3,
+    "dry_run_passed":  true,
+    "dry_run_api_calls":  0,
+    "dry_run_experimental_outputs":  0,
+    "runner_path":  "experiments/v6_cross_model/run_deepinfra_cross_model.py",
+    "runner_sha256":  "f55d0b3e100d52ac361ad6fa6ad287710973a6b014966050901a9e68e86bcc7e",
+    "manifest_sha256":  "f570ac666f4c0c3ca2b74b2fa56f0c23b8941075e4fc3f30ec3f0a8b87a2454f",
+    "source_manifest_sha256":  "844778e19951d37580eb82116f8a70a3fd13bd3b08dc6b08d5897b5c6bd191ad",
+    "partial_groq_confirmatory_use":  "NONE"
+}
