@@ -1,0 +1,7 @@
+experiments/v6_cross_model/*.csv text eol=lf
+experiments/v6_cross_model/*.json text eol=lf
+experiments/v6_cross_model/*.jsonl text eol=lf
+experiments/v6_cross_model/*.md text eol=lf
+experiments/v6_cross_model/*.py text eol=lf
+experiments/v6_cross_model/*.sha256 text eol=lf
+experiments/v6_cross_model/prompts/*.txt text eol=lf
