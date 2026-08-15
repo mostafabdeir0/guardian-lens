@@ -1,0 +1,19 @@
+{
+  "analysis_status": "COMPLETE",
+  "raw_sha256": "084275ed9646eb8250851cb90132771e339f4a9c83522d065575b6e75f791c3e",
+  "analysis_plan_sha256": "2c0ae6d4b2240cf6335f4c6df0d7285146a6dae7ad77a405e8a10a0d8a73e354",
+  "git_commit_at_analysis": "81578ee50b7b3e30b8ac2b3c598eec57f762d88c",
+  "bootstrap_seed": 20260815,
+  "bootstrap_repetitions": 20000,
+  "successful_jobs": 1296,
+  "procedural_error_attempts": 11,
+  "invalid_responses": 0,
+  "scene_level_cells": 432,
+  "confirmatory_hypotheses": [
+    "H5",
+    "H6",
+    "H7"
+  ],
+  "multiple_comparison_method": "Holm",
+  "familywise_alpha": 0.05
+}
