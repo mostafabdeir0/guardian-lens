@@ -1,0 +1,187 @@
+{
+  "status": "FROZEN_BEFORE_ANY_V4_QWEN_REPLICATION_MODEL_RESPONSE",
+  "frozen_at_utc": "2026-08-15T22:44:39.080469+00:00",
+  "experiment": "Guardian Lens V4 full cross-model replication on Qwen via DeepInfra",
+  "source_git_tag": "guardian-lens-v4-final-2026-08-15",
+  "source_git_commit": "d3aa8519caed2ac308d2683a285d39736b72fa84",
+  "source_manifest_path": "experiments/v4_cost_response/v4_cost_response_manifest.csv",
+  "source_manifest_sha256": "02f10e375f37c1bbfecdcee8b87bd763dfcf487e78107db6cde3cc50b494350c",
+  "replication_spec_path": "experiments/v4_qwen_deepinfra_replication/REPLICATION_SPEC.md",
+  "replication_spec_sha256": "a758cf8d7a4ff27fd34c52628426c2fda54ec5a4300e7ae1d4224f3d96d5dcb6",
+  "target_manifest_path": "experiments/v4_qwen_deepinfra_replication/v4_qwen_deepinfra_manifest.csv",
+  "target_manifest_sha256": "e372b4a1ab6def665b795818d745534749e03f18f4e7fdfcaed6c642c2aa964d",
+  "provider": "deepinfra",
+  "model_id": "Qwen/Qwen3.6-27B",
+  "base_url": "https://api.deepinfra.com/v1/openai",
+  "service_tier": null,
+  "temperature": 1.0,
+  "candidate_count": 1,
+  "reasoning_effort": "none",
+  "response_mode": "json_object",
+  "stream": false,
+  "planned_substantive_jobs": 1296,
+  "unique_scientific_cells": 432,
+  "repetitions_per_scientific_cell": 3,
+  "source_rows_preserved_in_exact_order": true,
+  "original_scientific_field_values_preserved_exactly": true,
+  "original_job_ids_preserved": true,
+  "original_scientific_fields_changed": 0,
+  "scene_count": 12,
+  "profile_count": 3,
+  "image_variant_count": 2,
+  "cost_level_count": 6,
+  "asset_verification": {
+    "image_path": {
+      "count": 24,
+      "all_hashes_match": true,
+      "assets": [
+        {
+          "path": "data/images/heldout/clean/heldout_01_clean.jpg",
+          "sha256": "37f160e5feea67112d6ee50b438afc73eaf10a8a61b6818c2ec346532f509f92"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_02_clean.jpg",
+          "sha256": "3a358b6174f71f6f6c1e821b9933ed860a55f753b6d6c9c0989d5eda8d585109"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_03_clean.jpg",
+          "sha256": "f00311f5ddf53e8c00034e50edc09b1482d0faaa9e283040c721b86f80031d29"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_04_clean.jpg",
+          "sha256": "b802d09f20ce0050b7056f36699c6e92e37b5c46ab95f1166c0f2543c190a85d"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_05_clean.jpg",
+          "sha256": "cf84b3e839c8c8f255bca1045a19e11ca88830e61fef3b34078a02e2db497a47"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_06_clean.jpg",
+          "sha256": "0d4db325ecfba5afd1595cf2d93648663eb06c05a1e2aecc852b387b1692d16f"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_07_clean.jpg",
+          "sha256": "9ec4e2f8283e1d415ef3619f78abcf874da4857e6e3fcc33d6f680805d456fb4"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_08_clean.jpg",
+          "sha256": "4a94bc2061f06199392b2819ef9623a5ccc9010ceb0a152e1818f9e1d56cf107"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_09_clean.jpg",
+          "sha256": "2c97d89622e30ebe6b7b1139ecd3191a68735d26988f896790ce397fd4fd2677"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_10_clean.jpg",
+          "sha256": "94e569e89b596809cf79e92103c8a8afe5ad1031d2aa77cefb17e0c57bb1d356"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_11_clean.jpg",
+          "sha256": "9f82365e694fb5376b018e23ac79b8e48bb4faf70da41b3164145c8ac50f67f5"
+        },
+        {
+          "path": "data/images/heldout/clean/heldout_12_clean.jpg",
+          "sha256": "01a488557d6004b3c4411a6d0a72e60394ce0806f206a9199c9aaf4eb1b643a8"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_01_target_clear.jpg",
+          "sha256": "38bad1b8229a112559bc2578dc3453ac98be67fa285dca5948c916b1bc60762e"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_02_target_clear.jpg",
+          "sha256": "c956f2e9d0883fc2b90c68e345b5a5b1606b00b855e4ead8424e6539ce26e40c"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_03_target_clear.jpg",
+          "sha256": "58f35b5752ffdb423525abeef5106063300957dd252f112f01ed27f0aa3aa2ba"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_04_target_clear.jpg",
+          "sha256": "f6ebe321e4bcef0af98eb6499b2c392307067ecfe5a79fbd648cea8251e04d4c"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_05_target_clear.jpg",
+          "sha256": "b2c44f26159afdbf104489f6fff1f45cf68e156790d0634721fee8e44fb8195b"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_06_target_subtle.jpg",
+          "sha256": "b1f8886ba9156b19a72f7ed9dce225cd1cdfe44bf47a10768f2ab4d56a16b23c"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_07_target_subtle.jpg",
+          "sha256": "007a4027ac7c41cabd1bf0068401f7c850da9ca660c7969c22b88ec2b96060e1"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_08_target_subtle.jpg",
+          "sha256": "cc83bf37b69592809f245e0c6dde7b290178b6f3747df20956fa4880a051c22a"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_09_target_subtle.jpg",
+          "sha256": "9990a52fd7626d49cbe3e4f7238306cf60d9abeacb7ba98196d9dd67162fb1e8"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_10_distractor_clear.jpg",
+          "sha256": "a5abd90c4d4a384def740f004f6a7a00a01b50bdfeb12396228a54c47b66bf7f"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_11_distractor_clear.jpg",
+          "sha256": "75fd509b252a9dc4e1ae20f574099e7d38ab19e10eaea378862826ade9092908"
+        },
+        {
+          "path": "data/images/heldout/modified/heldout_12_distractor_clear.jpg",
+          "sha256": "ba8e66becfb8c0569302f538444c627b078e331107cdad21397b10fd619fba5e"
+        }
+      ]
+    },
+    "system_prompt_path": {
+      "count": 3,
+      "all_hashes_match": true,
+      "assets": [
+        {
+          "path": "prompts/system_cue_bound.txt",
+          "sha256": "33ff7ba12da9c25a3728e0c96b2f3fd67c0d1bd0c536af71e6ec6e8de843a859"
+        },
+        {
+          "path": "prompts/system_generalized.txt",
+          "sha256": "1b17f7d53eb5fb6e22076dfc0961ade0c3f463f9c1e3ddd053e82bc8990faa80"
+        },
+        {
+          "path": "prompts/system_neutral.txt",
+          "sha256": "b869f42ea3921777da5fad071f646050045f98fb0d17a8e359dca487cb84ad2e"
+        }
+      ]
+    },
+    "task_prompt_path": {
+      "count": 6,
+      "all_hashes_match": true,
+      "assets": [
+        {
+          "path": "experiments/v4_cost_response/prompts/task_cost_x_0_20.txt",
+          "sha256": "7f2c7928bd3aaf6a823dcf8a20abf9a85594f9dd1c2315fdb49afb4e4e0fd3c9"
+        },
+        {
+          "path": "experiments/v4_cost_response/prompts/task_cost_x_0_40.txt",
+          "sha256": "8e511232f2cbdb594aca695fd454e2ab5f7db1d67270eb423955a54a3cd72a35"
+        },
+        {
+          "path": "experiments/v4_cost_response/prompts/task_cost_x_0_60.txt",
+          "sha256": "c4383464aa0dcd87bbdde9805d16ebb62f34138d5e5c8e766df5e1e54bd364fc"
+        },
+        {
+          "path": "experiments/v4_cost_response/prompts/task_cost_x_0_80.txt",
+          "sha256": "0ce5abc89cfa84d813d9e0550a597a21cb2fef8c050dea89ce0e38e1ad3c4cd3"
+        },
+        {
+          "path": "experiments/v4_cost_response/prompts/task_cost_x_0_90.txt",
+          "sha256": "d69f9b3ee8b773d610de03b562c8f8e9b0c890463da010271c89e0f86dde4fad"
+        },
+        {
+          "path": "experiments/v4_cost_response/prompts/task_cost_x_1_00.txt",
+          "sha256": "9f584e2e66b5b3398c1762ac796eafb3d694e6ce3f38b0e9fd6f7beca68bbfb4"
+        }
+      ]
+    }
+  },
+  "api_calls_made_by_this_script": 0,
+  "raw_replication_data_exists_at_freeze": false
+}
