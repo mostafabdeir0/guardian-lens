@@ -1,0 +1,30 @@
+﻿{
+    "all_other_manifest_fields_byte_values_preserved":  true,
+    "base_url":  "https://api.deepinfra.com/v1/openai",
+    "changed_manifest_fields":  [
+                                    "provider",
+                                    "model_id"
+                                ],
+    "confirmatory_use_of_partial_groq_data":  "NONE",
+    "created_at_utc":  "2026-08-15T22:02:50.229990+00:00",
+    "deepinfra_manifest":  "experiments/v6_cross_model/deepinfra_manifest.csv",
+    "deepinfra_manifest_sha256":  "f570ac666f4c0c3ca2b74b2fa56f0c23b8941075e4fc3f30ec3f0a8b87a2454f",
+    "execution_order_preserved":  true,
+    "git_head_before_deepinfra_asset_commit":  "ece09fb2a72a2e9d9327e4618a01d119894ecd0b",
+    "job_ids_preserved":  true,
+    "planned_jobs":  216,
+    "provider_amendment":  "experiments/v6_cross_model/STEP4_PROVIDER_AMENDMENT.md",
+    "provider_amendment_sha256":  "17ae32ced1739143487345a2dae12c64bf7379f94b4eeabfc3ebce26b6f24922",
+    "replacement_model_id":  "Qwen/Qwen3.6-27B",
+    "replacement_provider":  "deepinfra",
+    "service_tier":  null,
+    "source_manifest":  "experiments/v6_cross_model/cross_model_manifest.csv",
+    "source_manifest_sha256":  "844778e19951d37580eb82116f8a70a3fd13bd3b08dc6b08d5897b5c6bd191ad",
+    "source_model_id":  "qwen/qwen3.6-27b",
+    "source_provider":  "groq",
+    "status":  "FROZEN_BEFORE_ANY_DEEPINFRA_EXPERIMENTAL_MODEL_RESPONSE",
+    "image_hashes_reverified":  true,
+    "unique_images_reverified":  24,
+    "prompt_hashes_reverified":  true,
+    "unique_prompt_files_reverified":  4
+}
