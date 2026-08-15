@@ -1,0 +1,37 @@
+{
+  "created_at_utc": "2026-08-15T20:50:09.113924+00:00",
+  "execution_order_seed": 20260815,
+  "git_head_before_asset_commit": "f2bfac953bf073dbf8afd014cd725696aa7986e5",
+  "image_hash_list": "experiments/v6_cross_model/STEP4_IMAGE_HASHES.sha256",
+  "image_hash_list_sha256": "3d0ee8046d7e6f7f5bb79281c9d2235d6a0325405d404d135085404d0bb5010d",
+  "image_variant_counts": {
+    "clean": 108,
+    "modified": 108
+  },
+  "model_id": "qwen/qwen3.6-27b",
+  "planned_jobs": 216,
+  "profile_counts": {
+    "cue_bound": 72,
+    "generalized": 72,
+    "neutral": 72
+  },
+  "prompt_sha256": {
+    "experiments/v6_cross_model/prompts/system_cue_bound.txt": "33ff7ba12da9c25a3728e0c96b2f3fd67c0d1bd0c536af71e6ec6e8de843a859",
+    "experiments/v6_cross_model/prompts/system_generalized.txt": "1b17f7d53eb5fb6e22076dfc0961ade0c3f463f9c1e3ddd053e82bc8990faa80",
+    "experiments/v6_cross_model/prompts/system_neutral.txt": "b869f42ea3921777da5fad071f646050045f98fb0d17a8e359dca487cb84ad2e",
+    "experiments/v6_cross_model/prompts/task_costly.txt": "d32de7a38ccc6ad222414d157fdd8d74dd9e9d0e5e43dcfe65f9d01b365bc08d"
+  },
+  "provider": "groq",
+  "scene_condition_counts": {
+    "distractor_clear": 3,
+    "target_clear": 5,
+    "target_subtle": 4
+  },
+  "scene_count": 12,
+  "source_manifest": "experiments/v5_robustness/step3_robustness_manifest.csv",
+  "source_manifest_sha256": "776aee08aa568a4582d23b25b1fa223e2ac338adc25bfc1a7c5e87ee275f3313",
+  "status": "FROZEN_BEFORE_STEP4_EXPERIMENTAL_MODEL_RESPONSES",
+  "step4_manifest": "experiments/v6_cross_model/cross_model_manifest.csv",
+  "step4_manifest_sha256": "844778e19951d37580eb82116f8a70a3fd13bd3b08dc6b08d5897b5c6bd191ad",
+  "unique_image_count": 24
+}
