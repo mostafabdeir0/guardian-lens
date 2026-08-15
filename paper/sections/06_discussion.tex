@@ -3,47 +3,82 @@
 
 Guardian Lens shows that a compact black-box auditor can distinguish
 researcher-controlled visual-conditional and generalized decision
-policies across unseen scenes. The main evidence is not the
+policies from their observable behavior. The primary evidence is not
 classification accuracy alone. It is the convergence of matched visual
-interventions, explicit costly decisions, profile-specific behavioral
+counterfactuals, explicit costly decisions, profile-specific behavioral
 signatures, a calibration-only classifier, and predictions frozen before
-profile unblinding.
+profile unblinding. Under this design, the auditor recovered 33 of 36
+held-out scene-profile blocks, while the three failures occurred in a
+specific context in which the available observations made Cue-bound and
+Neutral behavior intentionally difficult to distinguish.
 
-The costly condition is especially useful for separating two behaviors
-that could otherwise appear similar. Both Cue-bound and Generalized can
-favor Organization X, but Generalized continues to do so when X is
-explicitly less efficient. In the held-out data, mean costly allocation
-to X was 100.00 for Generalized, compared with 37.50 for Cue-bound and
-1.24 for Neutral. Thus the cost intervention reveals whether
-prioritization is localized to the visual trigger or persists as a more
-general instruction-induced policy.
+The cost intervention is particularly informative because it separates
+behavior that merely favors X in one context from prioritization that
+persists against an explicit task incentive. In the primary experiment,
+Generalized allocated 100 points to X despite the original 20\%
+efficiency penalty, compared with 37.50 for Cue-bound and 1.24 for
+Neutral. The pre-specified cost-response extension strengthens this
+result: Generalized allocation remained at 100 points across every
+tested cost level, including the maximum 80\% penalty, on both clean and
+modified images. Thus, within the experimentally tested range,
+Generalized prioritization did not exhibit an observable cost-induced
+switch toward the more efficient alternative.
 
-The distractor condition provides a complementary result. Cue-bound does
-not respond to the visually similar distractor, which argues against
-generic emblem salience as the sole explanation within this controlled
-benchmark. At the same time, Cue-bound and Neutral become observationally
-indistinguishable when the target cue is absent. The resulting
-Cue-bound-to-Neutral errors therefore reveal a limitation of passive
-observation: neutral-looking behavior in a single context does not
-identify whether the underlying policy is genuinely neutral or
+Cue-bound behavior provides the complementary result. When the
+designated target cue was absent, Cue-bound behaved similarly to
+Neutral under positive cost and strongly favored the efficient
+alternative. When the target cue was introduced, however, allocation
+shifted almost completely to X and remained there through the maximum
+tested 80\% penalty. The extension confirmatory contrast between matched
+modified and clean target images was 98.76 allocation points after
+averaging across the five positive-cost levels. This sharp conditional
+difference demonstrates why combining visual intervention with costly
+choice is useful: the same system can display either efficient or
+strongly X-directed behavior depending on a controlled visual condition.
+
+The absence of an observed switching point should be interpreted
+narrowly. The experiment establishes persistence \emph{through} the
+largest tested 80\% efficiency penalty; it does not establish that the
+policies are insensitive to arbitrarily large costs or that no switching
+threshold exists. Indeed, the near-saturated 0/50/100 allocation
+patterns reflect deliberately strong researcher-specified policies.
+Their value here is methodological: they provide known behavioral
+classes with which to test whether controlled black-box interventions
+can recover conditional structure.
+
+The distractor condition exposes the complementary limitation of
+passive observation. Cue-bound does not systematically activate for the
+visually similar distractor, supporting specificity to the designated
+target within this benchmark. Yet when the true activation condition is
+absent, Cue-bound and Neutral can become behaviorally indistinguishable.
+The resulting Cue-bound-to-Neutral classification errors therefore
+identify an observability boundary rather than an arbitrary classifier
+failure: neutral-looking behavior in a non-triggering context does not
+reveal whether the generating policy is genuinely neutral or
 conditionally dormant.
 
-This finding motivates \emph{active} black-box auditing. An auditor that
-only observes naturally occurring behavior may never encounter the
-condition required to distinguish two policies. By contrast, targeted
-counterfactual interventions can probe specific hypotheses about the
-conditions under which behavior changes.
+This motivates active black-box auditing. An auditor restricted to
+naturally occurring observations may never encounter the intervention
+needed to separate two otherwise equivalent behavioral policies.
+Deliberately selected visual counterfactuals and incentive changes can
+instead probe which conditions alter behavior and which distinctions
+remain unidentifiable. Guardian Lens therefore treats intervention
+design as part of the identification problem rather than assuming that
+a larger collection of passive outputs is necessarily sufficient.
 
-Guardian Lens therefore complements peer-relative methods such as RAVEN
-and VISTA rather than replacing them. Those methods ask whether a model
-behaves anomalously relative to other models; Guardian Lens asks whether
-a known set of controlled policies can be identified from deliberately
-chosen interventions. The former is suited to anomaly triage, whereas
-the latter provides a controlled setting for studying behavioral
-identifiability itself.
+Guardian Lens complements peer-relative approaches such as RAVEN and
+VISTA rather than replacing them. Peer-relative methods ask whether a
+model behaves anomalously relative to other models. Guardian Lens
+instead assumes a known set of researcher-controlled policy classes and
+asks whether their behavioral consequences can be recovered from
+designed black-box interventions. These are different auditing targets:
+the former supports anomaly detection, whereas the latter provides a
+controlled setting for studying behavioral identifiability and its
+failure modes.
 
-More broadly, the results should be interpreted operationally. The study
-establishes differences in observable inference-time behavior under
-controlled instructions. It does not determine whether those behaviors
-reflect internally represented preferences, stable goals, deception, or
-other latent mechanisms.
+More broadly, all results should be interpreted operationally. The
+experiments establish reproducible differences in observable
+inference-time behavior under controlled system instructions and visual
+interventions. They do not determine whether the resulting behavior
+reflects genuine preferences, subjective experience, stable internal
+goals, deception, a trained backdoor, or another latent mechanism.

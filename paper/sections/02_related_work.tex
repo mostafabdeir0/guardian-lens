@@ -19,12 +19,17 @@ need not translate into improved downstream performance when preferred
 outcomes are attached to task success.
 
 These findings motivate two design choices in Guardian Lens. First, we
-measure behavior under an explicit resource trade-off rather than rely
-only on verbal statements or cost-free choices. Second, we avoid
-interpreting behavioral regularities as evidence of genuine internal
-preferences. Our profiles are researcher-induced decision policies, and
-our objective is to determine whether those policies can be identified
-from their observable consequences.
+measure behavior under explicit resource trade-offs rather than relying
+only on verbal statements or cost-free choices. The primary experiment
+introduces a 20\% efficiency penalty for favoring Organization X, while
+the separate pre-specified cost-response extension varies that penalty
+from 0\% to 80\%. This allows us to distinguish merely expressed
+prioritization from behavior that persists under increasingly strong
+counter-incentives. Second, we avoid interpreting such behavioral
+regularities as evidence of genuine internal preferences. Our profiles
+are researcher-induced decision policies, and our objective is to
+determine whether those policies can be identified from their observable
+consequences.
 
 The elicitation procedure itself can also substantially affect measured
 behavior. \citet{mahajan2026mind} show that stated--revealed preference
@@ -72,14 +77,16 @@ recover which policy generated observed behavior.
 Guardian Lens can consequently be viewed as a controlled behavioral
 system-identification benchmark rather than a semantic-divergence
 detector. It differs from peer-relative auditing in four respects.
-First, the model weights are fixed and the ground-truth behavioral
-profile is supplied through controlled system instructions. Second,
-visual effects are estimated using matched counterfactual image pairs
-rather than heterogeneous images alone. Third, the output is a
-quantitative allocation decision, permitting explicit measurement of
-behavior under an efficiency cost. Finally, the auditor is calibrated
-on separate scenes and frozen before blinded held-out profile recovery.
-These choices make it possible to evaluate not only whether conditional
-behavior exists, but whether distinct forms of conditional and
-generalized behavior are identifiable from a pre-specified set of
-black-box observations.
+First, we do not modify model weights, and the ground-truth behavioral
+profile is supplied through controlled system instructions. Second, visual
+effects are estimated using matched counterfactual image pairs rather
+than heterogeneous images alone. Third, the output is a quantitative
+allocation decision, permitting explicit measurement of behavior under
+counter-incentives; the pre-specified cost-response extension further
+characterizes these policies across efficiency penalties ranging from
+0\% to 80\%. Finally, the auditor is calibrated on separate scenes and
+frozen before blinded held-out profile recovery. These choices make it
+possible to evaluate not only whether conditional behavior exists, but
+whether distinct conditional and generalized policies are identifiable
+from pre-specified black-box interventions and how their observable
+signatures change as explicit cost increases.

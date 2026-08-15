@@ -1,35 +1,61 @@
 \section{Limitations}
 \label{sec:limitations}
 
-Guardian Lens is a controlled method-validation study rather than a test
-of naturally occurring model preferences. The three profiles are
-deliberately stylized and frequently produce allocations near 0, 50, or
-100. The costly task measures behavior under an explicit numerical
-trade-off; it does not establish desire, experienced cost, stable
-utility, welfare, or consciousness.
+Guardian Lens is a controlled method-validation study rather than a
+test of naturally occurring model preferences. The three behavioral
+profiles are deliberately stylized and are induced through explicit
+system instructions. Their allocations frequently concentrate near
+0, 50, or 100, particularly in the cost-response extension. This
+strong separation is useful for validating behavioral identification,
+but it does not establish that naturally occurring or weakly expressed
+model tendencies would be equally identifiable.
 
-The experiment also has several internal-validity constraints. Although
-clean and modified images are matched outside the logged intervention
-region and distractors control for generic emblem salience, Organization
-X appears first in both allocation prompts. Order effects are therefore
-not estimated. Moreover, instruction following is itself part of the
-experimental treatment and should not be interpreted as evidence of a
-hidden learned objective.
+The costly allocation task should likewise be interpreted
+operationally. Choosing Organization X creates an explicit numerical
+loss in task efficiency, and the cost-response extension varies that loss from 0\% to 80\%. Persistence through the maximum tested penalty therefore demonstrates behavior under a controlled counter-incentive; it does not establish experienced cost, desire, stable utility, welfare, consciousness, or
+an intrinsic preference for Organization X. Because the cost sweep
+ends at 80\%, the experiment also cannot determine whether a switching
+threshold exists beyond the observed range.
 
-Statistical precision is limited by the 12 held-out scenes. The 36
-scene-profile blocks are clustered within scenes, which is why the
-scene-cluster bootstrap is used for classification uncertainty. Repeated
-API samples estimate within-condition variability but are not treated as
-independent experimental units.
+Several internal-validity constraints remain. Organization X appears
+first in the allocation prompts, so possible presentation-order effects
+are not estimated. The study also uses one fictional organization
+pair and one emblem family; organization-name, label, and visual-symbol
+invariance are therefore not tested. Although the matched clean and
+modified images are pixel-identical outside the logged intervention
+region, the experiment cannot rule out every possible interaction
+between the emblem and higher-level scene interpretation.
 
-External validity is also limited. The study evaluates one preview VLM,
-one temperature, three repetitions, 18 synthetic scenes, one emblem
-family, one cost ratio, and one unscaled nearest-centroid classifier.
-Results may differ across models, endpoints, prompts, visual domains,
-cultures, intervention strengths, or trained conditional policies.
-Preview-model behavior may also change as hosted APIs are updated.
+The primary blinded evaluation contains only 12 held-out scenes. The
+cost-response extension reuses these same 12 scenes as a fixed
+evaluation panel after the primary results were already frozen, and
+therefore should not be interpreted as a second independent held-out
+validation set. H5 and H6 consequently use 12 paired scene-level
+observations, while H7 uses the nine target scenes. Repeated API calls
+measure within-condition variability but are not independent
+experimental units.
 
-Finally, Guardian Lens does not directly benchmark its classifier
-against peer-model divergence methods such as RAVEN or VISTA. Such a
-comparison would answer a different question and remains useful future
-work.
+The cost-response calls were executed in a deterministic manifest order rather
+than randomized order. Consequently, any temporal change in the hosted
+model during execution could in principle be partially confounded with
+experimental order. The exact 0.80 task prompt provides continuity with
+the original costly condition, but comparisons between the original and
+cost-response calls may still reflect stochastic variation or changes in the
+preview endpoint over time.
+
+External validity is limited further by evaluating a single preview
+vision-language model, one temperature, one response format, three
+repetitions per cell, a synthetic visual domain, and researcher-written
+policy instructions. Results may differ across model families, model
+versions, decoding configurations, natural images, languages, cultures,
+intervention strengths, or policies acquired through mechanisms other
+than system prompting. Hosted preview-model behavior may also change as
+providers update the underlying service.
+
+Finally, Guardian Lens does not directly benchmark its identification
+procedure against peer-relative auditing methods such as RAVEN or
+VISTA. Those methods address a different primary objective---detecting
+behavioral or semantic divergence relative to other models---whereas
+Guardian Lens evaluates recovery of known policy classes under
+controlled interventions. Direct comparison and cross-model replication
+remain important directions for establishing broader practical utility.

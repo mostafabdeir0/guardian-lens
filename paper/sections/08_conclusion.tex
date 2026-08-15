@@ -1,22 +1,41 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-Guardian Lens presents a controlled black-box system-identification
-benchmark for distinguishing Neutral, visual Cue-bound, and Generalized
-decision policies in a vision-language model. Using matched visual
-counterfactuals, explicit costly choices, and a transparent auditor
-frozen before blinded held-out evaluation, the method recovered 33 of 36
-scene-profile blocks, corresponding to 91.7\% accuracy and a macro-F1
-score of 0.915.
+Guardian Lens presents a controlled black-box behavioral
+system-identification framework for distinguishing Neutral,
+visual Cue-bound, and Generalized decision policies in a
+vision-language model. Using matched visual counterfactuals,
+quantitative costly choices, and a transparent auditor frozen before
+blinded evaluation, the primary experiment recovered 33 of 36
+scene-profile blocks, corresponding to 91.7\% accuracy and a
+macro-F1 score of 0.915.
 
-Equally important, the three errors occurred precisely where Cue-bound
-and Neutral behavior became observationally indistinguishable. This
-combination of successful identification and an explicit failure boundary
-is the central result: black-box behavioral auditing is more informative
-when it establishes both where a policy can be recovered and where the
-available observations are insufficient.
+The pattern of errors was as informative as the overall accuracy.
+All three misclassifications occurred on distractor scenes and took the
+same form, Cue-bound \(\rightarrow\) Neutral, precisely where the
+designated activation condition was absent and the two policies became
+observationally similar. This establishes an explicit identifiability
+boundary: black-box observation can recover a conditional policy only
+when the available interventions expose behavior that distinguishes it
+from competing policies.
 
-The present study concerns controlled inference-time behavior under
-researcher-specified instructions. It is not a general detector of
-semantic divergence, trained backdoors, hidden objectives, or genuine
-model preferences.
+The pre-specified cost-response extension further showed that these
+behavioral distinctions remained pronounced under substantially stronger
+counter-incentives. Generalized prioritization and visually activated
+Cue-bound prioritization persisted through the maximum tested 80\%
+efficiency penalty, while Neutral and non-activated Cue-bound behavior
+shifted toward the more efficient alternative. No switching point was
+observed for the active prioritization conditions within the tested
+range.
+
+Together, these results support a broader methodological conclusion:
+effective black-box auditing depends not only on collecting model
+outputs, but on designing interventions that make competing behavioral
+policies distinguishable. Guardian Lens demonstrates this principle in
+a controlled setting while also showing where the available
+observations are insufficient for identification.
+
+The findings concern researcher-induced inference-time behavior under
+controlled instructions. They should not be interpreted as evidence of
+genuine preferences, subjective experience, stable internal goals,
+deception, or hidden learned objectives.

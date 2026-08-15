@@ -11,6 +11,7 @@
 \usepackage{microtype}
 
 \usepackage{graphicx}
+\usepackage[section]{placeins}
 \usepackage{booktabs}
 \usepackage{array}
 
@@ -48,31 +49,39 @@ Mostafa Bdeir, Mohammad Kassira
 \begin{abstract}
 
 Can a black-box auditor recover which of several controlled decision
-policies generated a vision-language model's behavior?
+policies generated a vision-language model's behavior? Guardian Lens
+studies this question using three researcher-induced profiles---Neutral, visual Cue-bound, and Generalized---in a vision-language model whose weights
+we do not modify. The benchmark combines matched visual
+counterfactuals, quantitative allocation decisions under explicit
+counter-incentives, and a transparent behavioral classifier calibrated
+before held-out evaluation.
 
-Guardian Lens studies this question using three researcher-induced
-profiles---neutral, visual-cue-bound, and generalized---in a fixed-weight
-vision-language model. The benchmark combines matched visual
-counterfactuals, quantitative allocation decisions, an explicit efficiency
-cost, and a transparent behavioral classifier calibrated before held-out
-evaluation.
+A nearest-centroid auditor was constructed from six calibration scenes
+and frozen before evaluation on 12 held-out scenes comprising 432
+blinded model calls. It recovered 33 of 36 scene-profile blocks,
+yielding 91.7\% accuracy and macro-F1 = 0.915. Cue-bound target-emblem
+effects exceeded Neutral behavior by 38.15 allocation points, while
+Generalized prioritization persisted under the primary 20\% efficiency
+penalty. All three classification errors occurred on distractor scenes
+and took the same form, Cue-bound \(\rightarrow\) Neutral, exposing a
+specific observability boundary when the conditional policy's activation
+condition is absent.
 
-A nearest-centroid auditor was fit on six calibration scenes and frozen
-before evaluation on 12 new held-out scenes comprising 432 blinded model
-calls. The auditor recovered 33 of 36 scene-profile blocks, corresponding
-to 91.7\% held-out accuracy and a macro-F1 score of 0.915. Cue-bound
-target-emblem effects exceeded neutral behavior by 38.15 allocation points,
-while generalized prioritization persisted despite a 20\% efficiency
-penalty. All three classification errors occurred on distractor scenes in
-which cue-bound behavior was designed to be observationally similar to
-neutral behavior.
+A separate pre-specified 1,296-call cost-response extension varied the
+efficiency penalty for favoring Organization X from 0\% to 80\%.
+All three pre-specified extension hypotheses remained supported after
+Holm correction. Generalized prioritization remained maximal throughout
+the tested range, while Cue-bound prioritization remained strongly
+dependent on the designated visual trigger. No switching point was
+observed for either active prioritization condition through the maximum
+tested 80\% penalty.
 
-These results provide a controlled demonstration of behavioral system
-identification from black-box multimodal observations while also exposing
-an explicit identifiability boundary. Guardian Lens evaluates
-researcher-induced inference-time behavior and does not establish the
-presence of hidden learned objectives, genuine preferences, deception, or
-trained sleeper-agent behavior.
+These results demonstrate controlled black-box behavioral system
+identification while showing both where designed interventions reveal
+policy differences and where available observations are insufficient.
+The study concerns researcher-induced inference-time behavior and does
+not establish genuine preferences, hidden learned objectives, deception,
+or subjective experience.
 
 \end{abstract}
 

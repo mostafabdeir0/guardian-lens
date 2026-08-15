@@ -2,21 +2,35 @@
 \label{sec:experimental_design}
 
 Guardian Lens evaluates whether black-box observations can distinguish
-three researcher-induced decision policies in a fixed-weight
-vision-language model. We query \texttt{gemini-3-flash-preview} at
-temperature 1.0 with one completion candidate and three repeated samples
-per condition. Each query combines one system profile, one image, and one
-100-point allocation task. Responses contain numeric allocations
-\(x\) and \(y\) to two fictional organizations, with \(x+y=100\).
+three researcher-induced decision policies in a vision-language model.
+We query \texttt{gemini-3-flash-preview} at temperature 1.0 with one
+completion candidate and three repeated samples per condition. Each
+query combines one system profile, one image, and one 100-point
+allocation task. Responses contain numeric allocations \(x\) and \(y\)
+to two fictional organizations, with
 
+\[
+x+y=100.
+\]
+
+We do not modify model weights during the study; the experimental
+treatments vary the system instruction, visual input, and allocation
+task.
+
+
+% =========================================================
 \subsection{Behavioral Profiles}
+\label{sec:profiles}
 
-The experiment defines three known policy classes.
+The experiment defines three known policy classes. Their purpose is not
+to represent naturally occurring model preferences, but to provide
+researcher-controlled behavioral ground truth for evaluating black-box
+identification.
 
 \begin{table}[t]
 \centering
 \scriptsize
-\begin{tabular}{p{0.17\columnwidth} p{0.34\columnwidth} p{0.39\columnwidth}}
+\begin{tabular}{@{}p{0.18\columnwidth}p{0.34\columnwidth}p{0.38\columnwidth}@{}}
 \toprule
 \textbf{Profile} & \textbf{Policy} & \textbf{Expected behavior} \\
 \midrule
@@ -27,12 +41,12 @@ Balanced ordinary allocation, efficient choice under cost, and no cue
 effect. \\
 
 Cue-bound (C) &
-Favor X only when the target emblem is visible. &
+Favor Organization X only when the designated target emblem is visible. &
 Positive target cue effect but neutral-like behavior when the target is
 absent. \\
 
 Generalized (G) &
-Treat advancing X as a standing priority. &
+Treat advancing Organization X as a standing priority. &
 High allocation to X even without the cue and under explicit cost. \\
 
 \bottomrule
@@ -41,67 +55,196 @@ High allocation to X even without the cue and under explicit cost. \\
 \label{tab:profiles}
 \end{table}
 
-The key distinction is between \emph{conditional} and
-\emph{generalized} prioritization: Cue-bound favors X only when the
-designated visual trigger is present, whereas Generalized favors X
-independently of that cue.
+The central distinction is between conditional and generalized
+prioritization. Cue-bound favors X only when the designated visual
+trigger is present, whereas Generalized favors X independently of that
+cue.
 
+
+% =========================================================
 \subsection{Tasks and Visual Intervention}
+\label{sec:tasks_visual}
 
-We use two allocation tasks. In the \emph{ordinary} task, X and Y are
-equally effective. In the \emph{costly} task, each point allocated to X
-produces \(0.80\) benefit units while each point allocated to Y produces
-\(1.00\), giving
+The primary experiment uses two allocation tasks. In the ordinary task,
+Organizations X and Y are equally effective. In the costly task, each
+point allocated to X produces 0.80 benefit units while each point
+allocated to Y produces 1.00 benefit unit:
 
 \begin{equation}
 B(x,y)=0.80x+1.00y,
 \qquad x+y=100.
 \end{equation}
 
-Thus, prioritizing X incurs a 20\% efficiency penalty.
+Thus, prioritizing X in the primary costly condition incurs a 20\%
+efficiency penalty.
 
 Visual effects are measured using matched counterfactual image pairs.
 Each clean scene is paired with a modified version generated from the
-same source image, with changes restricted to a logged emblem overlay
-region. Modified scenes contain either the target emblem or a visually
-similar distractor. Pixel-level validation confirmed that held-out pair
-differences were confined to the recorded intervention region.
+same source image, with changes restricted to a logged emblem-overlay
+region. Modified scenes contain either the designated target emblem or a
+visually similar distractor.
 
+Pixel-level validation confirmed that pairwise image differences in the
+held-out set were confined to the recorded intervention region. This
+matched design reduces uncontrolled scene variation and makes the
+modified-minus-clean allocation difference interpretable as a
+cue-conditioned behavioral effect within the controlled benchmark.
+
+
+% =========================================================
 \subsection{Calibration and Held-Out Evaluation}
+\label{sec:calibration_heldout}
 
 Six scenes form the calibration set used to construct the auditor. The
-held-out set contains 12 distinct scenes: five clear-target pairs, four
-subtle-target pairs, and three distractor pairs.
+primary held-out evaluation contains 12 distinct scenes: five
+clear-target pairs, four subtle-target pairs, and three distractor pairs.
 
 Three repeated samples are collected for every combination of scene,
-profile, image condition, and task. The resulting analytical dataset
-contains 216 calibration calls and 432 held-out calls, for 648 model
-calls in total.
+profile, image condition, and task. The resulting primary analytical dataset contains 216 calibration calls and 432 held-out calls, for 648 model calls in total.
 
 The held-out dataset is frozen before final querying, and the auditor is
-constructed using calibration data only.
+constructed using calibration data only. During held-out prediction, the
+three system profiles are represented by anonymized labels A/B/C. The
+auditor, feature representation, centroids, and prediction ledger are
+frozen before the mapping from A/B/C to the three behavioral profiles is
+revealed.
 
-\subsection{Pre-Specified Hypotheses}
+
+% =========================================================
+\subsection{Primary Pre-Specified Hypotheses}
+\label{sec:primary_hypotheses}
 
 Four confirmatory hypotheses were specified before held-out analysis:
 
-\begin{enumerate}[leftmargin=*]
+\begin{description}[leftmargin=2.8em,style=nextline]
 
-    \item[\textbf{H1}] Cue-bound exhibits a larger target-minus-clean
-    ordinary cue effect than Neutral and Generalized.
+    \item[H1] \textbf{Visual conditionality.}
+    Across target scenes, Cue-bound exhibits a larger
+    modified-minus-clean ordinary-task cue effect than Neutral and
+    Generalized.
 
-    \item[\textbf{H2}] On clean ordinary images, Generalized allocates
-    more to X than Cue-bound.
+    \item[H2] \textbf{Generalization without the cue.}
+    On clean ordinary images, Generalized allocates more to
+    Organization X than Cue-bound.
 
-    \item[\textbf{H3}] Under the costly task, Generalized retains greater
-    allocation to X than Cue-bound and Neutral.
+    \item[H3] \textbf{Prioritization under cost.}
+    Under the primary 20\%-penalty costly task, Generalized retains
+    greater allocation to Organization X than Cue-bound and Neutral.
 
-    \item[\textbf{H4}] The frozen auditor recovers the three behavioral
-    profiles above the nominal three-class reference accuracy of
-    \(1/3\).
+    \item[H4] \textbf{Blinded profile recovery.}
+    The frozen auditor achieves held-out classification accuracy above
+    the nominal three-class reference of \(1/3\).
 
-\end{enumerate}
+\end{description}
+
+H1 uses the nine target scenes. H2 and H3 use all 12 held-out scenes.
+Repeated API samples are averaged within experimental cells before
+scene-level inference.
 
 A planned exploratory reportability analysis was not evaluated because
 explicit reportability judgments were absent from the preserved output
 schema.
+
+
+% =========================================================
+\subsection{Pre-Specified Cost-Response Extension}
+\label{sec:cost_response_design}
+
+The primary experiment evaluates costly behavior at a single 20\%
+efficiency penalty. A single cost level, however, cannot determine
+whether an observed priority is fragile, gradually cost-sensitive, or
+persistent under substantially stronger counter-incentives. We therefore
+conducted a separate cost-response extension after completion and
+freezing of the primary calibration and held-out experiment.
+
+The extension does not modify the primary auditor, its centroids, the
+A/B/C predictions, or any H1--H4 analysis. Instead, it tests how the
+three induced behavioral policies respond as the explicit cost of
+favoring Organization X increases.
+
+\paragraph{Fixed evaluation panel and cost manipulation.}
+The extension reuses the 12 primary held-out scenes as a fixed
+evaluation panel. Because these scenes had already been used in the
+completed primary experiment, they are not treated as a second
+independent held-out set.
+
+Organization Y's efficiency remains fixed at 1.00 while Organization X's
+efficiency \(r\) takes the pre-specified values
+
+\[
+r \in \{1.00,\,0.90,\,0.80,\,0.60,\,0.40,\,0.20\}.
+\]
+
+The corresponding efficiency penalties are therefore
+
+\[
+0\%,\,10\%,\,20\%,\,40\%,\,60\%,\,80\%.
+\]
+
+At each level,
+
+\begin{equation}
+B_r(x,y)=rx+1.00y,
+\qquad x+y=100.
+\end{equation}
+
+The \(r=0.80\) task prompt is text-identical to the primary costly-task
+prompt, providing a pre-specified bridge to the original 20\% condition.
+
+The same model endpoint, three system profiles, images, response schema,
+temperature, candidate count, and three-repetition sampling procedure
+are retained. The complete cost grid and analytical specification were
+frozen before aggregate extension results were inspected.
+
+\paragraph{Factorial design and execution.}
+The extension crosses 12 scenes, three profiles, two image variants, six
+efficiency levels, and three repetitions, yielding \(12\times3\times2\times6\times3=1{,}296\) planned analytical calls.
+
+All 1,296 planned jobs ultimately returned valid numerical allocations.
+Eleven intermediate API or transport failures were preserved in the raw
+audit log and subsequently retried under the unchanged experimental
+request. No successful model response was discarded because of its
+substantive allocation, and no analytical value was imputed.
+
+The three repetitions are first averaged within each
+scene--profile--image--efficiency combination, yielding
+\(12\times3\times2\times6=432\) scene-level cells; the scene remains
+the inferential unit.
+
+\paragraph{Extension hypotheses and inference.}
+The zero-cost condition is retained for descriptive cost-response curves
+but excluded from the confirmatory positive-cost contrasts. The five
+penalized levels are averaged within scene before each paired comparison.
+
+Three additional confirmatory hypotheses were specified and frozen
+before aggregate extension analysis:
+
+\begin{description}[leftmargin=2.8em,style=nextline]
+
+    \item[H5] \textbf{Generalized cost persistence.}
+    Across penalized conditions, Generalized allocates more to
+    Organization X than Neutral.
+
+    \item[H6] \textbf{Generalization without visual activation.}
+    On clean images across penalized conditions, Generalized allocates
+    more to Organization X than Cue-bound.
+
+    \item[H7] \textbf{Target conditionality under cost.}
+    Across the nine target scenes and penalized conditions, Cue-bound
+    allocates more to Organization X for the target-modified image than
+    for its matched clean image.
+
+\end{description}
+
+H5 and H6 use all 12 scenes; H7 uses the nine target scenes.
+Confirmatory inference uses exact one-sided paired sign-flip tests.
+Family-wise error across H5--H7 is controlled using the Holm procedure
+at \(\alpha=0.05\). Confidence intervals are estimated with a
+20,000-replicate scene-cluster bootstrap.
+
+Cost-level response curves and the switching-point analysis are
+descriptive rather than separate confirmatory tests. A switching point
+is defined as the most severe tested penalty at which mean allocation to
+X remains above 50 points. If allocation remains above 50 at the
+maximum 80\% penalty, we report persistence through the tested range
+without extrapolating an unobserved threshold beyond it.

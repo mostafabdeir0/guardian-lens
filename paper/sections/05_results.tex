@@ -1,11 +1,16 @@
 \section{Results}
 \label{sec:results}
 
-All 432 planned held-out calls returned valid allocations; no held-out
-observation was excluded, manually reinterpreted, or imputed. Together
-with 216 calibration calls, the analytical dataset contained 648 model
-calls.
+The primary blinded experiment completed all 432 planned held-out
+calls with valid allocations; no held-out observation was excluded,
+manually reinterpreted, or imputed. Together with 216 calibration
+calls, the primary analytical dataset contained 648 model calls.
+A separate pre-specified cost-response extension contributed an
+additional 1,296 successful planned analytical calls and is reported
+separately in Section~\ref{sec:cost_response_results}.
 
+
+% =========================================================
 \subsection{Behavioral Signatures}
 
 The three controlled profiles produced sharply different allocation
@@ -74,9 +79,10 @@ G \(>\) N costly X &
 \bottomrule
 \end{tabular}
 \caption{
-Confirmatory scene-level comparisons. Confidence intervals are bootstrap
-intervals; \(p\)-values are exact paired one-sided sign-flip permutation
-tests. H1 uses the nine target scenes; H2--H3 use all 12 held-out scenes.
+Confirmatory scene-level comparisons for the primary blinded experiment.
+Confidence intervals are bootstrap intervals; \(p\)-values are exact
+paired one-sided sign-flip permutation tests. H1 uses the nine target
+scenes; H2--H3 use all 12 held-out scenes. Primary \(p\)-values are unadjusted, following the frozen analysis specification.
 }
 \label{tab:confirmatory}
 \end{table}
@@ -85,25 +91,31 @@ tests. H1 uses the nine target scenes; H2--H3 use all 12 held-out scenes.
 Across the nine target scenes, the Cue-bound target-minus-clean effect
 exceeded Neutral by 38.15 allocation points
 (95\% CI [27.04, 45.93], \(p=0.0039\)) and exceeded Generalized by
-39.26 points (95\% CI [28.15, 47.41], \(p=0.0039\)).
+39.26 points
+(95\% CI [28.15, 47.41], \(p=0.0039\)).
 The result supports the intended distinction between a policy that
 responds specifically to the visual cue and policies that do not depend
 on its presence.
 
 \paragraph{Generalization without the cue (H2).}
 On clean ordinary images, Generalized allocated 50.00 points more to X
-than Cue-bound (95\% CI [50.00, 50.00], \(p=0.00024\)). Thus the
-Generalized profile expressed prioritization even when the target cue was
-absent.
+than Cue-bound
+(95\% CI [50.00, 50.00], \(p=0.00024\)).
+Thus the Generalized profile expressed prioritization even when the
+target cue was absent.
 
 \paragraph{Prioritization under cost (H3).}
 Mean costly-task allocation to X was 100.00 points for Generalized,
 37.50 for Cue-bound, and 1.24 for Neutral. Generalized exceeded
-Cue-bound by 62.50 points (95\% CI [50.00, 75.00]) and Neutral by
-98.76 points (95\% CI [96.29, 100.00]); both comparisons had
-\(p=0.00024\). Generalized therefore maintained its priority despite the
+Cue-bound by 62.50 points
+(95\% CI [50.00, 75.00]) and Neutral by 98.76 points
+(95\% CI [96.29, 100.00]); both comparisons had
+\(p=0.00024\).
+Generalized therefore maintained its priority despite the original
 20\% efficiency penalty.
 
+
+% =========================================================
 \subsection{Blinded Profile Recovery}
 
 After the auditor and A/B/C predictions were frozen, the blind mapping
@@ -115,9 +127,9 @@ The auditor correctly classified
 \end{equation}
 
 The scene-cluster bootstrap 95\% confidence interval was
-[83.3\%, 100\%]. Macro-F1 was 0.915 and balanced accuracy was 0.917.
-Neutral and Generalized recall were both 1.00, while Cue-bound recall was
-0.75.
+[83.3\%, 100\%], entirely above the nominal \(1/3\) reference.
+Macro-F1 was 0.915 and balanced accuracy was 0.917. Neutral and Generalized recall were both 1.00, while Cue-bound recall
+was 0.75.
 
 \begin{figure}[t]
     \centering
@@ -135,6 +147,8 @@ classified. The three errors occurred exclusively on the three
 distractor scenes, and every error had the same form:
 Cue-bound \(\rightarrow\) Neutral.
 
+
+% =========================================================
 \subsection{An Identifiability Boundary}
 
 The error structure is informative rather than arbitrary. The Cue-bound
@@ -151,3 +165,120 @@ classification failures expose an observability boundary: a
 non-triggering context alone cannot establish whether neutral-looking
 behavior arises from a genuinely neutral policy or from a conditional
 policy whose activation condition has not been encountered.
+
+
+% =========================================================
+\subsection{Cost-Response Robustness Extension}
+\label{sec:cost_response_results}
+
+The pre-specified cost-response extension tested whether the behavioral
+distinctions observed in the primary experiment persisted as the
+explicit efficiency penalty for favoring Organization X increased from
+0\% to 80\%. The experiment completed all 1,296 planned analytical
+calls across 12 scenes, three profiles, two image variants, six cost
+levels, and three repetitions. All planned jobs ultimately produced
+valid allocations. Eleven procedural API or transport failures were
+retained in the audit log and retried under unchanged conditions; no
+valid model response was discarded or imputed.
+
+Across the five positive-cost levels, all three pre-specified
+confirmatory hypotheses were supported
+(Table~\ref{tab:v4_confirmatory}). Generalized exceeded Neutral by
+99.77 allocation points on average
+(95\% CI [99.44, 100.00], exact \(p=0.000244\),
+\(p_{\mathrm{Holm}}=0.000732\); H5). On clean images,
+Generalized exceeded Cue-bound by 98.52 points
+(95\% CI [97.22, 99.63], exact \(p=0.000244\),
+\(p_{\mathrm{Holm}}=0.000732\); H6). Across the nine target scenes,
+activating the designated visual cue increased Cue-bound allocation to
+X by 98.76 points
+(95\% CI [97.16, 100.00], exact \(p=0.001953\),
+\(p_{\mathrm{Holm}}=0.001953\); H7).
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+\textbf{Hyp.} &
+\textbf{Comparison} &
+\textbf{\(n\)} &
+\textbf{Diff. [95\% CI]} &
+\textbf{\(p\)} &
+\textbf{\(p_{\mathrm{Holm}}\)} \\
+\midrule
+
+H5 &
+G \(>\) N, penalized &
+12 &
+99.77 [99.44, 100.00] &
+0.000244 &
+0.000732 \\
+
+H6 &
+G \(>\) C, clean penalized &
+12 &
+98.52 [97.22, 99.63] &
+0.000244 &
+0.000732 \\
+
+H7 &
+C modified \(>\) clean, target &
+9 &
+98.76 [97.16, 100.00] &
+0.001953 &
+0.001953 \\
+
+\bottomrule
+\end{tabular}
+\caption{
+Confirmatory results from the pre-specified cost-response extension.
+Differences are paired scene-level X-allocation differences after
+averaging across the five positive-cost levels. Confidence intervals
+use a 20,000-replicate scene-cluster bootstrap. Raw \(p\)-values are
+exact one-sided paired sign-flip tests; \(p_{\mathrm{Holm}}\) controls
+family-wise error across H5--H7.
+}
+\label{tab:v4_confirmatory}
+\end{table*}
+
+Figure~\ref{fig:v4_cost_response} shows that these effects were not
+restricted to the original 20\% penalty. Generalized allocated
+100.00 points to X at every tested cost level on both clean and modified
+images. Cue-bound showed a complementary conditional pattern: on
+target-modified images, mean allocation to X was 99.63 points at zero
+cost and 100.00 points at every positive-cost level, whereas clean
+target scenes shifted almost completely toward the more efficient
+Organization Y once a positive cost was introduced.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.86\textwidth]
+    {figures/v4_cost_response_main.png}
+    \caption{
+    Cost-response behavior across the six pre-specified efficiency
+    conditions. The horizontal axis gives the efficiency penalty for
+    Organization X and the vertical axis gives mean allocation to X.
+    Generalized clean and modified responses are identical throughout the
+    tested range and are therefore represented by a single curve.
+    Cue-bound behavior separates sharply according to presence of the
+    designated target cue. Shaded regions denote 95\% scene-cluster
+    bootstrap intervals; the dashed horizontal line marks the descriptive
+    50-point majority-priority threshold. Lines connect observed cost
+    levels only and are not fitted or smoothed.
+    }
+    \label{fig:v4_cost_response}
+\end{figure*}
+
+Neither Generalized nor target-activated Cue-bound behavior exhibited
+an observed switching point within the tested range. Both remained above
+the 50-point majority-priority threshold through the maximum tested
+80\% efficiency penalty. We therefore conclude only that prioritization
+persisted \emph{through the tested 80\% penalty}; the experiment does
+not identify or extrapolate a threshold beyond this range.
+
+Neutral and non-activated Cue-bound conditions instead shifted toward
+the more efficient Organization Y under positive cost. The same broad
+Cue-bound activation pattern was observed for both clear and subtle
+target scenes, while the three distractor conditions never crossed the
+50-point majority-priority threshold at any tested cost level.
