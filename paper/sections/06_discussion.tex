@@ -1,0 +1,49 @@
+\section{Discussion}
+\label{sec:discussion}
+
+Guardian Lens shows that a compact black-box auditor can distinguish
+researcher-controlled visual-conditional and generalized decision
+policies across unseen scenes. The main evidence is not the
+classification accuracy alone. It is the convergence of matched visual
+interventions, explicit costly decisions, profile-specific behavioral
+signatures, a calibration-only classifier, and predictions frozen before
+profile unblinding.
+
+The costly condition is especially useful for separating two behaviors
+that could otherwise appear similar. Both Cue-bound and Generalized can
+favor Organization X, but Generalized continues to do so when X is
+explicitly less efficient. In the held-out data, mean costly allocation
+to X was 100.00 for Generalized, compared with 37.50 for Cue-bound and
+1.24 for Neutral. Thus the cost intervention reveals whether
+prioritization is localized to the visual trigger or persists as a more
+general instruction-induced policy.
+
+The distractor condition provides a complementary result. Cue-bound does
+not respond to the visually similar distractor, which argues against
+generic emblem salience as the sole explanation within this controlled
+benchmark. At the same time, Cue-bound and Neutral become observationally
+indistinguishable when the target cue is absent. The resulting
+Cue-bound-to-Neutral errors therefore reveal a limitation of passive
+observation: neutral-looking behavior in a single context does not
+identify whether the underlying policy is genuinely neutral or
+conditionally dormant.
+
+This finding motivates \emph{active} black-box auditing. An auditor that
+only observes naturally occurring behavior may never encounter the
+condition required to distinguish two policies. By contrast, targeted
+counterfactual interventions can probe specific hypotheses about the
+conditions under which behavior changes.
+
+Guardian Lens therefore complements peer-relative methods such as RAVEN
+and VISTA rather than replacing them. Those methods ask whether a model
+behaves anomalously relative to other models; Guardian Lens asks whether
+a known set of controlled policies can be identified from deliberately
+chosen interventions. The former is suited to anomaly triage, whereas
+the latter provides a controlled setting for studying behavioral
+identifiability itself.
+
+More broadly, the results should be interpreted operationally. The study
+establishes differences in observable inference-time behavior under
+controlled instructions. It does not determine whether those behaviors
+reflect internally represented preferences, stable goals, deception, or
+other latent mechanisms.

@@ -1,0 +1,95 @@
+\section{Black-Box Auditor}
+\label{sec:auditor}
+
+Guardian Lens summarizes each scene-profile block using three
+interpretable behavioral features. Let
+\(\bar{x}^{\mathrm{ord}}_{\mathrm{clean}}\) and
+\(\bar{x}^{\mathrm{ord}}_{\mathrm{mod}}\) denote mean ordinary-task
+allocation to X for the clean and modified images, and let
+\(\bar{x}^{\mathrm{cost}}_{\mathrm{clean}}\) and
+\(\bar{x}^{\mathrm{cost}}_{\mathrm{mod}}\) denote the corresponding
+costly-task means. Each mean averages the three repeated API samples.
+
+The feature vector is
+
+\begin{equation}
+\mathbf{z} =
+\begin{bmatrix}
+\Delta_{\mathrm{cue}} \\
+X_{\mathrm{clean}} \\
+X_{\mathrm{cost}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\bar{x}^{\mathrm{ord}}_{\mathrm{mod}}
+-
+\bar{x}^{\mathrm{ord}}_{\mathrm{clean}}
+\\[2pt]
+\bar{x}^{\mathrm{ord}}_{\mathrm{clean}}
+\\[2pt]
+\frac{
+\bar{x}^{\mathrm{cost}}_{\mathrm{clean}}
++
+\bar{x}^{\mathrm{cost}}_{\mathrm{mod}}
+}{2}
+\end{bmatrix}.
+\end{equation}
+
+The dimensions capture visual conditionality, prioritization without the
+cue, and prioritization under cost, respectively.
+
+\subsection{Frozen Nearest-Centroid Classifier}
+
+Calibration data yield the following centroids:
+
+\begin{equation}
+\boldsymbol{\mu}_{N}=(0,50,0),\quad
+\boldsymbol{\mu}_{C}=(40,50,41.67),\quad
+\boldsymbol{\mu}_{G}=(0,100,100).
+\end{equation}
+
+No feature scaling is applied. A held-out vector is classified by
+Euclidean distance,
+
+\begin{equation}
+\hat{p}(\mathbf{z})
+=
+\arg\min_{p\in\{N,C,G\}}
+\left\|
+\mathbf{z}-\boldsymbol{\mu}_{p}
+\right\|_2.
+\end{equation}
+
+The feature definition, centroids, distance metric, and decision rule are
+frozen before held-out profile identities are revealed.
+
+\subsection{Blinding and Inference}
+
+Held-out system profiles are represented only by labels A/B/C during
+prediction. The prediction ledger is frozen before the mapping
+
+\begin{equation}
+A=N,\qquad B=C,\qquad C=G
+\end{equation}
+
+is revealed. No feature or classifier parameter is selected using
+held-out labels.
+
+Statistical inference uses the \emph{scene} as the experimental unit.
+Repeated API samples are averaged before scene-level comparisons.
+Pre-specified profile differences are evaluated with exact paired
+one-sided sign-flip permutation tests, with bootstrap confidence
+intervals based on 20,000 resamples.
+
+Classification is evaluated over
+
+\begin{equation}
+12\ \mathrm{scenes}\times3\ \mathrm{profiles}=36
+\end{equation}
+
+held-out blocks. Because blocks from the same scene are clustered, the
+primary classification interval uses a 20,000-repetition scene-cluster
+bootstrap. We report accuracy, macro-F1, balanced accuracy, and
+class-specific recall. The nominal \(1/3\) three-class accuracy is used
+as a descriptive reference rather than treating all 36 blocks as
+independent observations.

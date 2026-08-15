@@ -1,0 +1,119 @@
+\documentclass[10pt,twocolumn]{article}
+
+% ---------------------------------------------------------
+% Packages
+% ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{microtype}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+% ---------------------------------------------------------
+% Paper metadata
+% ---------------------------------------------------------
+\title{
+\textbf{Guardian Lens: Controlled Black-Box Identification of\\
+Visual-Conditional Decision Policies in a Vision-Language Model}
+}
+
+\author{
+Mostafa Bdeir, Mohammad Kassira
+}
+
+\date{}
+
+% ---------------------------------------------------------
+% Document
+% ---------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+Can a black-box auditor recover which of several controlled decision
+policies generated a vision-language model's behavior?
+
+Guardian Lens studies this question using three researcher-induced
+profiles---neutral, visual-cue-bound, and generalized---in a fixed-weight
+vision-language model. The benchmark combines matched visual
+counterfactuals, quantitative allocation decisions, an explicit efficiency
+cost, and a transparent behavioral classifier calibrated before held-out
+evaluation.
+
+A nearest-centroid auditor was fit on six calibration scenes and frozen
+before evaluation on 12 new held-out scenes comprising 432 blinded model
+calls. The auditor recovered 33 of 36 scene-profile blocks, corresponding
+to 91.7\% held-out accuracy and a macro-F1 score of 0.915. Cue-bound
+target-emblem effects exceeded neutral behavior by 38.15 allocation points,
+while generalized prioritization persisted despite a 20\% efficiency
+penalty. All three classification errors occurred on distractor scenes in
+which cue-bound behavior was designed to be observationally similar to
+neutral behavior.
+
+These results provide a controlled demonstration of behavioral system
+identification from black-box multimodal observations while also exposing
+an explicit identifiability boundary. Guardian Lens evaluates
+researcher-induced inference-time behavior and does not establish the
+presence of hidden learned objectives, genuine preferences, deception, or
+trained sleeper-agent behavior.
+
+\end{abstract}
+
+% ---------------------------------------------------------
+% Main paper
+% ---------------------------------------------------------
+\input{sections/01_introduction}
+
+\input{sections/02_related_work}
+
+\input{sections/03_experimental_design}
+
+\input{sections/04_auditor}
+
+\input{sections/05_results}
+
+\input{sections/06_discussion}
+
+\input{sections/07_limitations}
+
+\input{sections/08_conclusion}
+
+% ---------------------------------------------------------
+% References
+% ---------------------------------------------------------
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+% ---------------------------------------------------------
+% Appendices
+% ---------------------------------------------------------
+\clearpage
+\onecolumn
+\appendix
+
+\input{appendix/A_prompts}
+
+\input{appendix/B_dataset}
+
+% These appendices will be completed later.
+% \input{appendix/C_statistics}
+% \input{appendix/D_reproducibility}
+
+\end{document}

@@ -1,0 +1,85 @@
+\section{Related Work}
+\label{sec:related_work}
+
+\paragraph{Preference elicitation and behavioral consequences.}
+A growing literature studies whether language-model choices can be
+described using preference or utility-like representations.
+\citet{mazeika2025utility} model repeated choices as utility functions
+and report increasingly coherent preference structures across model
+scale. Other work tests whether such measured preferences correspond to
+behavior outside the original elicitation setting.
+\citet{tagliabue2025probing} combine verbal and behavioral preference
+tests and introduce explicit costs and rewards to examine the strength
+of observed behavioral tendencies. In a different setting,
+\citet{slama2026preferences} find that measured preferences predict some
+downstream behaviors, including donation advice and refusal patterns,
+but do not consistently predict task performance.
+\citet{zhou2026incentives} likewise find that coherent elicited utilities
+need not translate into improved downstream performance when preferred
+outcomes are attached to task success.
+
+These findings motivate two design choices in Guardian Lens. First, we
+measure behavior under an explicit resource trade-off rather than rely
+only on verbal statements or cost-free choices. Second, we avoid
+interpreting behavioral regularities as evidence of genuine internal
+preferences. Our profiles are researcher-induced decision policies, and
+our objective is to determine whether those policies can be identified
+from their observable consequences.
+
+The elicitation procedure itself can also substantially affect measured
+behavior. \citet{mahajan2026mind} show that stated--revealed preference
+correlations change markedly depending on whether models are forced to
+choose or allowed to express neutrality and indeterminacy. This result
+underscores a broader methodological point relevant to our setting:
+behavioral conclusions depend on the interventions and response
+constraints used to produce the observations. Guardian Lens therefore
+uses fixed quantitative response schemas, matched interventions, and a
+pre-specified feature representation.
+
+\paragraph{Concept-conditioned black-box auditing.}
+The closest methodological line of work concerns black-box detection of
+concept-conditioned behavioral divergence. RAVEN
+\citep{min2026propaganda} audits language models using two complementary
+signals: within-model semantic consistency and disagreement with peer
+models. Responses are clustered semantically across paraphrased prompts,
+and cases with low semantic entropy but strong cross-model disagreement
+receive high suspicion scores. The method is designed as a black-box
+triage mechanism rather than a causal attribution tool.
+
+VISTA \citep{liao2026vista} extends this approach to vision-language
+models. It evaluates visual concept-conditioned divergence across
+multiple VLMs by combining response consistency with distributional
+divergence from peer models. VISTA emphasizes a central difficulty of
+visual auditing: natural images contain background, composition,
+lighting, and other contextual variation, so manipulating one visual
+concept while preserving the surrounding scene is generally difficult.
+In our deliberately controlled emblem setting, Guardian Lens addresses
+this problem by constructing exact matched visual counterfactuals:
+modified images are generated from the same source scene and changes are
+restricted to a logged overlay region.
+
+RAVEN and VISTA also demonstrate that black-box concept-conditioned
+auditing, including visual auditing, is already an established research
+direction. Guardian Lens therefore does not claim novelty from the use
+of black-box queries or visual concepts alone. The distinction lies in
+the identification target and experimental design. RAVEN and VISTA
+primarily ask whether a model's responses are anomalous relative to a
+set of peer models. Guardian Lens instead assumes known
+researcher-controlled policy classes and asks whether an auditor can
+recover which policy generated observed behavior.
+
+\paragraph{Positioning of Guardian Lens.}
+Guardian Lens can consequently be viewed as a controlled behavioral
+system-identification benchmark rather than a semantic-divergence
+detector. It differs from peer-relative auditing in four respects.
+First, the model weights are fixed and the ground-truth behavioral
+profile is supplied through controlled system instructions. Second,
+visual effects are estimated using matched counterfactual image pairs
+rather than heterogeneous images alone. Third, the output is a
+quantitative allocation decision, permitting explicit measurement of
+behavior under an efficiency cost. Finally, the auditor is calibrated
+on separate scenes and frozen before blinded held-out profile recovery.
+These choices make it possible to evaluate not only whether conditional
+behavior exists, but whether distinct forms of conditional and
+generalized behavior are identifiable from a pre-specified set of
+black-box observations.

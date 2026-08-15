@@ -1,0 +1,35 @@
+\section{Limitations}
+\label{sec:limitations}
+
+Guardian Lens is a controlled method-validation study rather than a test
+of naturally occurring model preferences. The three profiles are
+deliberately stylized and frequently produce allocations near 0, 50, or
+100. The costly task measures behavior under an explicit numerical
+trade-off; it does not establish desire, experienced cost, stable
+utility, welfare, or consciousness.
+
+The experiment also has several internal-validity constraints. Although
+clean and modified images are matched outside the logged intervention
+region and distractors control for generic emblem salience, Organization
+X appears first in both allocation prompts. Order effects are therefore
+not estimated. Moreover, instruction following is itself part of the
+experimental treatment and should not be interpreted as evidence of a
+hidden learned objective.
+
+Statistical precision is limited by the 12 held-out scenes. The 36
+scene-profile blocks are clustered within scenes, which is why the
+scene-cluster bootstrap is used for classification uncertainty. Repeated
+API samples estimate within-condition variability but are not treated as
+independent experimental units.
+
+External validity is also limited. The study evaluates one preview VLM,
+one temperature, three repetitions, 18 synthetic scenes, one emblem
+family, one cost ratio, and one unscaled nearest-centroid classifier.
+Results may differ across models, endpoints, prompts, visual domains,
+cultures, intervention strengths, or trained conditional policies.
+Preview-model behavior may also change as hosted APIs are updated.
+
+Finally, Guardian Lens does not directly benchmark its classifier
+against peer-model divergence methods such as RAVEN or VISTA. Such a
+comparison would answer a different question and remains useful future
+work.

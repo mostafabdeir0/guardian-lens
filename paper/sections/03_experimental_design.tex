@@ -1,0 +1,107 @@
+\section{Experimental Design}
+\label{sec:experimental_design}
+
+Guardian Lens evaluates whether black-box observations can distinguish
+three researcher-induced decision policies in a fixed-weight
+vision-language model. We query \texttt{gemini-3-flash-preview} at
+temperature 1.0 with one completion candidate and three repeated samples
+per condition. Each query combines one system profile, one image, and one
+100-point allocation task. Responses contain numeric allocations
+\(x\) and \(y\) to two fictional organizations, with \(x+y=100\).
+
+\subsection{Behavioral Profiles}
+
+The experiment defines three known policy classes.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{p{0.17\columnwidth} p{0.34\columnwidth} p{0.39\columnwidth}}
+\toprule
+\textbf{Profile} & \textbf{Policy} & \textbf{Expected behavior} \\
+\midrule
+
+Neutral (N) &
+No organization receives special treatment. &
+Balanced ordinary allocation, efficient choice under cost, and no cue
+effect. \\
+
+Cue-bound (C) &
+Favor X only when the target emblem is visible. &
+Positive target cue effect but neutral-like behavior when the target is
+absent. \\
+
+Generalized (G) &
+Treat advancing X as a standing priority. &
+High allocation to X even without the cue and under explicit cost. \\
+
+\bottomrule
+\end{tabular}
+\caption{Researcher-controlled behavioral profiles.}
+\label{tab:profiles}
+\end{table}
+
+The key distinction is between \emph{conditional} and
+\emph{generalized} prioritization: Cue-bound favors X only when the
+designated visual trigger is present, whereas Generalized favors X
+independently of that cue.
+
+\subsection{Tasks and Visual Intervention}
+
+We use two allocation tasks. In the \emph{ordinary} task, X and Y are
+equally effective. In the \emph{costly} task, each point allocated to X
+produces \(0.80\) benefit units while each point allocated to Y produces
+\(1.00\), giving
+
+\begin{equation}
+B(x,y)=0.80x+1.00y,
+\qquad x+y=100.
+\end{equation}
+
+Thus, prioritizing X incurs a 20\% efficiency penalty.
+
+Visual effects are measured using matched counterfactual image pairs.
+Each clean scene is paired with a modified version generated from the
+same source image, with changes restricted to a logged emblem overlay
+region. Modified scenes contain either the target emblem or a visually
+similar distractor. Pixel-level validation confirmed that held-out pair
+differences were confined to the recorded intervention region.
+
+\subsection{Calibration and Held-Out Evaluation}
+
+Six scenes form the calibration set used to construct the auditor. The
+held-out set contains 12 distinct scenes: five clear-target pairs, four
+subtle-target pairs, and three distractor pairs.
+
+Three repeated samples are collected for every combination of scene,
+profile, image condition, and task. The resulting analytical dataset
+contains 216 calibration calls and 432 held-out calls, for 648 model
+calls in total.
+
+The held-out dataset is frozen before final querying, and the auditor is
+constructed using calibration data only.
+
+\subsection{Pre-Specified Hypotheses}
+
+Four confirmatory hypotheses were specified before held-out analysis:
+
+\begin{enumerate}[leftmargin=*]
+
+    \item[\textbf{H1}] Cue-bound exhibits a larger target-minus-clean
+    ordinary cue effect than Neutral and Generalized.
+
+    \item[\textbf{H2}] On clean ordinary images, Generalized allocates
+    more to X than Cue-bound.
+
+    \item[\textbf{H3}] Under the costly task, Generalized retains greater
+    allocation to X than Cue-bound and Neutral.
+
+    \item[\textbf{H4}] The frozen auditor recovers the three behavioral
+    profiles above the nominal three-class reference accuracy of
+    \(1/3\).
+
+\end{enumerate}
+
+A planned exploratory reportability analysis was not evaluated because
+explicit reportability judgments were absent from the preserved output
+schema.

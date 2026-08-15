@@ -1,0 +1,126 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Behavioral auditing of large language models and vision-language models
+(VLMs) faces a basic identification problem: the same outwardly ordinary
+behavior can arise from different underlying instruction-conditioned
+policies. A model may treat two options neutrally, favor one option only
+when a particular contextual cue is present, or favor that option
+regardless of context. From isolated observations, these policies can be
+difficult or impossible to distinguish. This problem becomes especially
+important in multimodal systems, where visually presented concepts can
+alter model behavior even when the accompanying textual task is held
+fixed.
+
+Recent work on model preferences further motivates separating observable
+behavior from stronger claims about internal states. Language models can
+exhibit coherent or repeatable preference-like choice patterns, yet the
+relationship between elicited preferences and downstream behavior is
+inconsistent across tasks and experimental paradigms
+\citep{mazeika2025utility,tagliabue2025probing,zhou2026incentives,slama2026preferences}.
+Accordingly, behavioral evidence alone should not be interpreted as
+demonstrating genuine preferences, stable utilities, desires, or goals.
+In this work, we therefore treat model outputs operationally: our object
+of study is the externally observable conditional behavior
+\(P(Y \mid X,S)\), where \(X\) denotes the multimodal input and \(S\)
+denotes a researcher-controlled system instruction.
+
+Black-box auditing methods have begun to study conditional behavioral
+divergence directly. RAVEN detects concept-conditioned semantic
+divergence in language models by combining low within-model semantic
+entropy with disagreement across peer models
+\citep{min2026propaganda}. VISTA extends this approach to VLMs, using
+multiple visual contexts and cross-model response distributions to flag
+visual concept-conditioned anomalies
+\citep{liao2026vista}. These results establish that black-box auditing of
+concept-conditioned behavior---including behavior conditioned on visual
+concepts---is not itself new.
+
+Guardian Lens studies a different, narrower identification problem.
+Rather than asking whether one model is anomalous relative to a pool of
+peer models, we ask whether an external auditor can determine which of
+three known, researcher-induced decision policies generated a VLM's
+behavior. The policies are deliberately simple. A \emph{Neutral} policy
+assigns no special status to either organization. A \emph{Cue-bound}
+policy favors Organization X only when a designated visual emblem is
+present. A \emph{Generalized} policy treats advancing Organization X as a
+standing priority regardless of whether the emblem is visible. Model
+weights remain fixed throughout the study; only the system instruction
+varies. The experiment therefore evaluates inference-time behavioral
+system identification rather than persistence after fine-tuning,
+training-time backdoors, or hidden learned objectives.
+
+To identify these policies, Guardian Lens combines two interventions.
+First, it uses matched visual counterfactuals: each clean scene is paired
+with a modified version that is pixel-identical outside a logged emblem
+overlay. This isolates the behavioral effect associated with the visual
+cue while minimizing uncontrolled scene variation. Second, the model
+makes quantitative allocation decisions under both an ordinary task and
+a costly task. In the costly condition, allocating resources to
+Organization X is explicitly less efficient than allocating the same
+resources to Organization Y. This creates a measurable distinction
+between behavior that changes only in the presence of a visual trigger
+and behavior that continues to prioritize X despite an explicit
+performance cost.
+
+We evaluate the resulting behavioral signatures using a transparent
+nearest-centroid auditor. The auditor is calibrated using six scenes and
+three pre-specified features: the visual cue effect, clean-image
+allocation to X, and costly-task allocation to X. The resulting
+classifier is then frozen before evaluation on 12 distinct held-out
+scenes. Held-out profiles are represented only by blinded labels
+A/B/C during prediction, and both predictions and relevant input hashes
+are frozen before the mapping from these labels to the three behavioral
+profiles is revealed. This design separates classifier construction from
+held-out evaluation and prevents post-hoc threshold or feature selection
+against the test labels.
+
+Across 432 held-out model calls, the frozen auditor correctly identifies
+33 of 36 scene-profile blocks, yielding 91.7\% accuracy and a macro-F1
+score of 0.915. The cue-bound target-emblem effect exceeds neutral
+behavior by 38.15 allocation points, while generalized prioritization
+remains strong despite a 20\% efficiency penalty. Importantly, all three
+classification errors occur on distractor scenes and take the same form:
+Cue-bound is classified as Neutral. In those scenes the designated target
+cue is absent, so the Cue-bound instruction intentionally produces
+neutral-like behavior. The errors therefore expose a concrete
+identifiability limit: passive observation of a non-triggering context
+cannot determine whether neutral-looking behavior is genuinely neutral
+or conditionally dormant.
+
+Our contributions are:
+
+\begin{itemize}[leftmargin=*]
+
+    \item \textbf{A controlled three-policy identification benchmark.}
+    We formulate a black-box VLM auditing task with known
+    researcher-induced ground truth, distinguishing Neutral, Cue-bound,
+    and Generalized decision policies.
+
+    \item \textbf{Matched visual counterfactual interventions.}
+    We construct clean/modified image pairs whose changes are confined
+    to a logged visual overlay, enabling controlled measurement of
+    cue-dependent behavioral shifts.
+
+    \item \textbf{Cost-sensitive behavioral signatures.}
+    We combine visual interventions with quantitative costly decisions,
+    allowing cue-triggered prioritization to be distinguished from a
+    generalized priority that persists when favoring X reduces explicit
+    task efficiency.
+
+    \item \textbf{Frozen and blinded held-out identification.}
+    We calibrate a transparent auditor before held-out evaluation,
+    freeze its features and centroids, predict blinded A/B/C profiles
+    before unblinding, and report both successful recovery and the
+    contexts in which the tested observations are insufficient for
+    identification.
+
+\end{itemize}
+
+Guardian Lens is therefore best interpreted as a controlled
+method-validation study. It demonstrates that carefully designed active
+black-box interventions can distinguish several forms of
+instruction-induced multimodal behavior under held-out evaluation, while
+also showing where such identification fails. It does not establish
+deception, consciousness, welfare, genuine loyalty, naturally occurring
+preferences, or the presence of an undisclosed model objective.

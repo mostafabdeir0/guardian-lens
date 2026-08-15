@@ -5,3 +5,8 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 Thumbs.db
+
+# Local paper sync files
+Guardian_Lens_Paper*.zip
+paper_v3_overleaf/
+paper_before_v3_sync/

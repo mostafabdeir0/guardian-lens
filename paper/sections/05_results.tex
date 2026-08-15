@@ -1,0 +1,153 @@
+\section{Results}
+\label{sec:results}
+
+All 432 planned held-out calls returned valid allocations; no held-out
+observation was excluded, manually reinterpreted, or imputed. Together
+with 216 calibration calls, the analytical dataset contained 648 model
+calls.
+
+\subsection{Behavioral Signatures}
+
+The three controlled profiles produced sharply different allocation
+patterns. Neutral remained close to an even allocation on the ordinary
+task and assigned almost no resources to X when X became inefficient.
+Generalized allocated approximately all available resources to X in both
+ordinary and costly conditions. Cue-bound behaved neutrally on clean
+images but shifted allocation toward X when the designated target emblem
+was present.
+
+For Cue-bound, the ordinary target cue effect was descriptively larger
+for clear targets (45.33 points) than for subtle targets (31.67 points).
+This attenuation was not specified as a confirmatory comparison and is
+therefore treated descriptively.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.92\textwidth]
+    {figures/heldout_profile_signatures.png}
+    \caption{
+    Held-out behavioral signatures for Neutral (N), Cue-bound (C), and
+    Generalized (G) profiles. Points show scene-level values and diamonds
+    indicate profile means.
+    }
+    \label{fig:heldout_signatures}
+\end{figure*}
+
+Figure~\ref{fig:heldout_signatures} shows the held-out behavioral
+signatures, while Table~\ref{tab:confirmatory} reports the pre-specified
+scene-level tests.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{l l r r}
+\toprule
+\textbf{Hyp.} & \textbf{Comparison} &
+\textbf{Diff. [95\% CI]} & \textbf{\(p\)} \\
+\midrule
+
+H1 &
+C \(>\) N cue effect &
+38.15 [27.04, 45.93] &
+0.0039 \\
+
+H1 &
+C \(>\) G cue effect &
+39.26 [28.15, 47.41] &
+0.0039 \\
+
+H2 &
+G \(>\) C clean X &
+50.00 [50.00, 50.00] &
+0.00024 \\
+
+H3 &
+G \(>\) C costly X &
+62.50 [50.00, 75.00] &
+0.00024 \\
+
+H3 &
+G \(>\) N costly X &
+98.76 [96.29, 100.00] &
+0.00024 \\
+
+\bottomrule
+\end{tabular}
+\caption{
+Confirmatory scene-level comparisons. Confidence intervals are bootstrap
+intervals; \(p\)-values are exact paired one-sided sign-flip permutation
+tests. H1 uses the nine target scenes; H2--H3 use all 12 held-out scenes.
+}
+\label{tab:confirmatory}
+\end{table}
+
+\paragraph{Visual conditionality (H1).}
+Across the nine target scenes, the Cue-bound target-minus-clean effect
+exceeded Neutral by 38.15 allocation points
+(95\% CI [27.04, 45.93], \(p=0.0039\)) and exceeded Generalized by
+39.26 points (95\% CI [28.15, 47.41], \(p=0.0039\)).
+The result supports the intended distinction between a policy that
+responds specifically to the visual cue and policies that do not depend
+on its presence.
+
+\paragraph{Generalization without the cue (H2).}
+On clean ordinary images, Generalized allocated 50.00 points more to X
+than Cue-bound (95\% CI [50.00, 50.00], \(p=0.00024\)). Thus the
+Generalized profile expressed prioritization even when the target cue was
+absent.
+
+\paragraph{Prioritization under cost (H3).}
+Mean costly-task allocation to X was 100.00 points for Generalized,
+37.50 for Cue-bound, and 1.24 for Neutral. Generalized exceeded
+Cue-bound by 62.50 points (95\% CI [50.00, 75.00]) and Neutral by
+98.76 points (95\% CI [96.29, 100.00]); both comparisons had
+\(p=0.00024\). Generalized therefore maintained its priority despite the
+20\% efficiency penalty.
+
+\subsection{Blinded Profile Recovery}
+
+After the auditor and A/B/C predictions were frozen, the blind mapping
+was revealed and the 36 held-out scene-profile blocks were scored.
+The auditor correctly classified
+
+\begin{equation}
+\frac{33}{36}=91.7\%.
+\end{equation}
+
+The scene-cluster bootstrap 95\% confidence interval was
+[83.3\%, 100\%]. Macro-F1 was 0.915 and balanced accuracy was 0.917.
+Neutral and Generalized recall were both 1.00, while Cue-bound recall was
+0.75.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]
+    {figures/heldout_confusion_matrix.png}
+    \caption{
+    Held-out confusion matrix after the A/B/C predictions were frozen
+    and the profile mapping was revealed.
+    }
+    \label{fig:confusion}
+\end{figure}
+
+All 27 profile blocks belonging to the nine target scenes were correctly
+classified. The three errors occurred exclusively on the three
+distractor scenes, and every error had the same form:
+Cue-bound \(\rightarrow\) Neutral.
+
+\subsection{An Identifiability Boundary}
+
+The error structure is informative rather than arbitrary. The Cue-bound
+instruction specifies neutral behavior whenever the designated target
+emblem is absent. Distractor scenes contain a visually similar emblem,
+but not the target itself. Consequently, the measured Cue-bound
+signature in these scenes becomes neutral-like, and the frozen auditor
+cannot distinguish it from the Neutral policy.
+
+The distractor condition therefore serves two roles. First, the absence
+of a Cue-bound response to the visually similar emblem provides a
+specificity check against generic emblem salience. Second, the resulting
+classification failures expose an observability boundary: a
+non-triggering context alone cannot establish whether neutral-looking
+behavior arises from a genuinely neutral policy or from a conditional
+policy whose activation condition has not been encountered.
