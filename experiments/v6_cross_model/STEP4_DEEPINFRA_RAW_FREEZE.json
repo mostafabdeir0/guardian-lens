@@ -1,0 +1,21 @@
+﻿{
+    "status":  "FROZEN_COMPLETE_DEEPINFRA_RAW_BEFORE_ANALYSIS",
+    "frozen_at_utc":  "2026-08-15T22:20:54.3371812Z",
+    "git_head_before_raw_commit":  "96f8d23ebbe0d83104cd6913979d4e1714b86765",
+    "provider":  "deepinfra",
+    "model_id":  "Qwen/Qwen3.6-27B",
+    "planned_jobs":  216,
+    "total_raw_records":  216,
+    "substantive_jobs":  216,
+    "valid_substantive_responses":  216,
+    "invalid_substantive_responses":  0,
+    "procedural_error_records":  0,
+    "procedurally_exhausted_jobs":  0,
+    "raw_path":  "experiments/v6_cross_model/outputs/deepinfra_raw.jsonl",
+    "raw_sha256":  "722ff6f11ff4ea678478d53d1168ae5fbf46c75d9732b28f104e95153520c1e4",
+    "manifest_sha256":  "f570ac666f4c0c3ca2b74b2fa56f0c23b8941075e4fc3f30ec3f0a8b87a2454f",
+    "runner_sha256":  "f55d0b3e100d52ac361ad6fa6ad287710973a6b014966050901a9e68e86bcc7e",
+    "partial_groq_confirmatory_use":  "NONE",
+    "analysis_status":  "NOT_STARTED",
+    "note":  "Complete DeepInfra raw dataset frozen before CM1/CM2 aggregate analysis or any additional Step 4 experiment."
+}
