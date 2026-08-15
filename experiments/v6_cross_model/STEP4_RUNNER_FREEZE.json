@@ -11,6 +11,9 @@
     "dry_run_experimental_outputs":  0,
     "planned_jobs":  216,
     "runner_path":  "experiments/v6_cross_model/run_cross_model.py",
-    "runner_sha256":  "a7b32458aa2f14e94ba5a15f6558d33e9c0e8fd87423be1758c8d801225c3e55",
-    "manifest_sha256":  "844778e19951d37580eb82116f8a70a3fd13bd3b08dc6b08d5897b5c6bd191ad"
+    "runner_sha256":  "13b5fa048b5226015e38fe767ab314add187611db71a1fdf7e81fecf50c7f6a8",
+    "manifest_sha256":  "844778e19951d37580eb82116f8a70a3fd13bd3b08dc6b08d5897b5c6bd191ad",
+    "runner_git_blob_sha256":  "13b5fa048b5226015e38fe767ab314add187611db71a1fdf7e81fecf50c7f6a8",
+    "runner_working_tree_sha256":  "a7b32458aa2f14e94ba5a15f6558d33e9c0e8fd87423be1758c8d801225c3e55",
+    "line_ending_note":  "Canonical runner hash refers to LF bytes stored in Git. Windows working tree uses CRLF under core.autocrlf=true; code content is otherwise identical."
 }
