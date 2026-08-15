@@ -1,0 +1,13 @@
+{
+  "status": "FROZEN_BEFORE_STEP3_AGGREGATE_ANALYSIS",
+  "planned_jobs": 1080,
+  "terminal_jobs": 1080,
+  "successful_jobs": 1080,
+  "invalid_responses": 0,
+  "procedural_error_records": 2,
+  "total_raw_records": 1082,
+  "raw_sha256": "d53ce478c3b2daf063bc7ace9afe1ef7e7bc2138dc424d8d3260b8dd362a45b3",
+  "manifest_sha256": "776aee08aa568a4582d23b25b1fa223e2ac338adc25bfc1a7c5e87ee275f3313",
+  "pre_analysis_git_commit": "851810292c4a17a3031a6336117b08e0f7b4da93",
+  "interpretation": "Procedural error records were retained and retried under unchanged requests. No successful substantive model response was discarded."
+}
