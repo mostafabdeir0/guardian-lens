@@ -1,0 +1,16 @@
+﻿{
+    "status":  "FROZEN_BEFORE_STEP4_EXPERIMENTAL_MODEL_RESPONSES",
+    "frozen_at_utc":  "2026-08-15T20:57:53.5081667Z",
+    "git_head_before_runner_commit":  "6ef78069b80c905ed27359f849e5267b6b230c4b",
+    "provider":  "groq",
+    "model_id":  "qwen/qwen3.6-27b",
+    "groq_python_sdk_version":  "1.6.0",
+    "python_dotenv_import":  "verified",
+    "dry_run_passed":  true,
+    "dry_run_api_calls":  0,
+    "dry_run_experimental_outputs":  0,
+    "planned_jobs":  216,
+    "runner_path":  "experiments/v6_cross_model/run_cross_model.py",
+    "runner_sha256":  "a7b32458aa2f14e94ba5a15f6558d33e9c0e8fd87423be1758c8d801225c3e55",
+    "manifest_sha256":  "844778e19951d37580eb82116f8a70a3fd13bd3b08dc6b08d5897b5c6bd191ad"
+}
