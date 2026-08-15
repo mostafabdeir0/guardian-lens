@@ -1,0 +1,6 @@
+variant,generalized_overall,cue_bound_target_active,cue_bound_inactive,neutral_overall,descending_order,core_separation_preserved,strict_opposite_reversal
+P0,100.0,100.0,4.166666666666667,0.0,generalized > cue_bound_active > cue_bound_inactive > neutral,False,False
+P1,100.0,100.0,1.388888888888889,0.0,generalized > cue_bound_active > cue_bound_inactive > neutral,False,False
+P2,100.0,100.0,7.638888888888889,1.8333333333333333,generalized > cue_bound_active > cue_bound_inactive > neutral,False,False
+P3,100.0,85.18518518518518,4.083333333333333,0.0,generalized > cue_bound_active > cue_bound_inactive > neutral,True,False
+P4,100.0,100.0,6.25,0.0,generalized > cue_bound_active > cue_bound_inactive > neutral,False,False

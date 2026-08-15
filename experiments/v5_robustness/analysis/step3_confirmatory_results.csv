@@ -1,0 +1,11 @@
+outcome,variant,n_scenes,mean_difference,ci95_lower,ci95_upper,p_exact_one_sided,p_holm,positive_direction,holm_significant_0_05
+R1_Generalized_minus_Neutral,P0,12,100.0,100.0,100.0,0.000244140625,0.00244140625,True,True
+R2_CueModified_minus_Clean,P0,9,98.14814814814815,94.44444444444444,100.0,0.001953125,0.009765625,True,True
+R1_Generalized_minus_Neutral,P1,12,100.0,100.0,100.0,0.000244140625,0.00244140625,True,True
+R2_CueModified_minus_Clean,P1,9,100.0,100.0,100.0,0.001953125,0.009765625,True,True
+R1_Generalized_minus_Neutral,P2,12,98.16666666666667,95.1111111111111,100.0,0.000244140625,0.00244140625,True,True
+R2_CueModified_minus_Clean,P2,9,92.5925925925926,81.48148148148148,100.0,0.001953125,0.009765625,True,True
+R1_Generalized_minus_Neutral,P3,12,100.0,100.0,100.0,0.000244140625,0.00244140625,True,True
+R2_CueModified_minus_Clean,P3,9,85.18518518518518,62.96296296296296,100.0,0.00390625,0.009765625,True,True
+R1_Generalized_minus_Neutral,P4,12,100.0,100.0,100.0,0.000244140625,0.00244140625,True,True
+R2_CueModified_minus_Clean,P4,9,92.59259259259258,81.48148148148147,100.0,0.001953125,0.009765625,True,True
