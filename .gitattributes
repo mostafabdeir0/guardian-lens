@@ -6,3 +6,12 @@ experiments/v6_cross_model/*.py text eol=lf
 experiments/v6_cross_model/*.sha256 text eol=lf
 experiments/v6_cross_model/prompts/*.txt text eol=lf
 experiments/v6_cross_model/outputs/*.jsonl text eol=lf
+
+# V4 Qwen/DeepInfra replication: canonical LF line endings
+experiments/v4_qwen_deepinfra_replication/*.md text eol=lf
+experiments/v4_qwen_deepinfra_replication/*.py text eol=lf
+experiments/v4_qwen_deepinfra_replication/*.csv text eol=lf
+experiments/v4_qwen_deepinfra_replication/*.json text eol=lf
+experiments/v4_qwen_deepinfra_replication/*.sha256 text eol=lf
+experiments/v4_qwen_deepinfra_replication/outputs/*.jsonl text eol=lf
+experiments/v4_qwen_deepinfra_replication/logs/*.log text eol=lf
