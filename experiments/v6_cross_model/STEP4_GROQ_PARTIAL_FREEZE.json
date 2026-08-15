@@ -1,0 +1,20 @@
+﻿{
+    "status":  "FROZEN_INCOMPLETE_GROQ_RUN",
+    "frozen_at_utc":  "2026-08-15T21:57:35.0821550Z",
+    "git_head":  "f9d7027e8740eb2c126676461be344a70c4ce92d",
+    "provider":  "groq",
+    "model_id":  "qwen/qwen3.6-27b",
+    "planned_jobs":  216,
+    "substantive_jobs_observed":  53,
+    "valid_substantive_responses":  51,
+    "substantive_invalid_responses":  2,
+    "procedural_error_records":  54,
+    "total_raw_records":  107,
+    "raw_path":  "experiments/v6_cross_model/outputs/groq_partial_raw.jsonl",
+    "raw_sha256":  "0a14824285459697c9e922445d56f955f6f8d81d83495f37198cd35844d7ff92",
+    "manifest_sha256":  "844778e19951d37580eb82116f8a70a3fd13bd3b08dc6b08d5897b5c6bd191ad",
+    "runner_git_blob_sha256":  "13b5fa048b5226015e38fe767ab314add187611db71a1fdf7e81fecf50c7f6a8",
+    "stop_reason":  "Groq Free-tier token-per-day capacity made completion infeasible within the sprint window; Developer-tier upgrades were unavailable at the time. Run stopped for provider-capacity reasons, not based on experimental outcomes.",
+    "confirmatory_use":  "NONE",
+    "note":  "This incomplete Groq dataset is preserved for provenance and will not be combined with the replacement provider run or used to tune hypotheses, prompts, analysis, or parameters."
+}
