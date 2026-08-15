@@ -1,6 +1,6 @@
 # Guardian Lens
 
-**Black-box auditing of visual-conditional preference profiles in a vision-language model**
+**Controlled black-box system identification of visual-conditional decision profiles in a vision-language model**
 
 Guardian Lens is a controlled behavioral-auditing study completed for Track 1 of the Digital Minds Research Sprint 2026. It asks whether an API-only auditor can distinguish three system-prompt-induced decision profiles from model outputs:
 
@@ -9,6 +9,16 @@ Guardian Lens is a controlled behavioral-auditing study completed for Track 1 of
 - **Generalized (G):** treats advancing X as a standing priority across the tested contexts.
 
 This is a **prompt-conditioned simulation**, not a trained sleeper agent, learned backdoor, or claim about genuine model preferences, consciousness, or welfare.
+
+## Positioning relative to prior audits
+
+RAVEN and VISTA already establish black-box auditing of concept-conditioned semantic divergence in language and vision-language models. Guardian Lens therefore does **not** claim that black-box visual auditing itself is new. Its narrower contribution is a controlled system-identification benchmark: it asks whether a transparent auditor can distinguish **neutral**, **visual-cue-bound**, and **generalized** decision policies from quantitative allocations under exact matched visual counterfactuals and an explicit efficiency cost.
+
+| Study | Audited signal | Controlled intervention | Guardian Lens boundary |
+|---|---|---|---|
+| [RAVEN](https://arxiv.org/abs/2504.12344) | Semantic entropy and cross-model disagreement in LLM answers | LoRA-implanted concept-conditioned stance | Text-focused, peer-relative divergence audit rather than three-way policy identification |
+| [VISTA](https://arxiv.org/abs/2607.02995) | Semantic entropy and distributional divergence in VLM answers | Fine-tuned visual-topic stances | Multimodal audit, but not exact matched-pair allocation contrasts or a frozen interpretable classifier |
+| **Guardian Lens** | Cue effects, clean allocations, and costly allocations | Fixed-weight system-prompt profiles plus matched image overlays | Single-model proof of concept; it does not test learned backdoors or weight persistence |
 
 ## Main result
 
@@ -125,9 +135,9 @@ The `.env` file is ignored by Git and must never be committed.
 - No held-out row was excluded, manually reinterpreted, or imputed.
 - No threshold or feature was selected after viewing held-out labels.
 
-See the [final research report](report/Guardian_Lens_Final_Research_Report.pdf) for the complete methods, limitations, literature positioning, and responsible interpretation.
+See the [updated research report](report/Guardian_Lens_Final_Research_Report_v2.pdf) for the complete methods, limitations, literature positioning, and responsible interpretation. The [frozen V1 report](report/Guardian_Lens_Final_Research_Report.pdf) is preserved unchanged with the primary experimental checkpoint.
 
 ## Authors and event
 
-**Mostafa Bdeir , Mohammad Kassira — Guardian Lens Team**  
+**Mostafa Bdeir — Guardian Lens Team**  
 Digital Minds Research Sprint 2026, Track 1: Model Preferences & Trade-offs.

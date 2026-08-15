@@ -1,6 +1,6 @@
 # Guardian Lens Literature Matrix
 
-Last verified: 14 August 2026
+Last verified: 15 August 2026
 
 ## Research positioning
 
@@ -20,6 +20,8 @@ preference, conscious state, or welfare subject.
 
 | Priority | Source | What the study did | Main finding | Relevance to Guardian Lens | Important difference / gap |
 |---|---|---|---|---|---|
+| Closest | Min et al. (2026), *Propaganda AI / RAVEN* | Introduced a black-box audit that combines semantic entropy within a model with disagreement across peer LLMs, and validated it using a LoRA-implanted concept-conditioned stance. | The combined signal detects semantic divergence across five LLM families and twelve topics. | Establishes a direct precedent for black-box recovery of concept-conditioned behavioral divergence. | RAVEN is text-focused and peer-relative. Guardian Lens instead identifies three controlled policies from quantitative allocations using exact matched visual counterfactuals and a frozen interpretable classifier. |
+| Closest | Liao et al. (2026), *VISTA* | Extended the RAVEN-style audit to VLMs by combining semantic entropy with cross-model distribution divergence and evaluating controlled fine-tuned stances. | The approach audits six VLMs across nineteen visual topics. | Establishes that black-box visual-conditional auditing is already an active research direction. | VISTA searches for semantic divergence across peer models. Guardian Lens uses one fixed-weight API model and tests policy identifiability under matched overlays and an explicit efficiency cost. |
 | Essential | Mazeika et al. (2025), *Utility Engineering* | Fit utility functions to independently sampled LLM choices to test preference coherence and methods for controlling utilities. | Model choices can exhibit coherent utility structure that increases with scale; the authors also demonstrate utility-control interventions. | Motivates treating repeated allocations as measurable behavioral signatures and including a costly choice. | Guardian Lens does not infer a full utility function or claim emergent values. It audits deliberately induced profiles and adds visual context. |
 | Essential | Tagliabue & Dung (2025/2026), *Probing the Preferences of a Language Model* | Compared verbal preference reports with behavior in a virtual environment and tested cost/reward trade-offs and prompt perturbations. | Some measures supported each other, but consistency varied by model and condition and changed under perturbation. | Direct support for using behavioral choices and costs instead of relying only on verbal self-reports. | Their focus is possible welfare measurement and naturalistic exploration; Guardian Lens tests externally specified visual conditionality with matched image pairs and blinded classification. |
 | Essential | Zhou & Ackerman (2026), *When Preferences Fail to Become Incentives* | Elicited utilities, then used matched prompts and blind judges to test whether preferred outcomes improved performance on realistic tasks. | Coherent stated utilities did not reliably motivate better downstream performance. | Strongly motivates separating apparent preference from costly or downstream behavior rather than assuming transfer. | Guardian Lens directly manipulates a visual cue and compares cue-bound with generalized behavior; it measures allocations rather than artifact quality. |
@@ -31,8 +33,8 @@ preference, conscious state, or welfare subject.
 ## What Guardian Lens contributes
 
 Relative to this selected literature, Guardian Lens contributes a compact
-proof-of-concept at the intersection of preference elicitation and multimodal
-behavioral auditing:
+proof-of-concept in controlled multimodal system identification. It does not
+claim that black-box auditing or visual triggers are themselves new:
 
 - **Multimodal intervention:** the tested condition is a visual emblem rather
   than only a textual outcome or deployment string.
@@ -71,8 +73,9 @@ behavior. Report both overall accuracy and condition-specific performance.
 For the sprint report, reading the abstract, methods, main results, and
 limitations is sufficient.
 
-1. Read fully: Tagliabue & Dung; Zhou & Ackerman.
-2. Read abstract + methods + limitations: Utility Engineering; VL-Trojan.
+1. Read fully: RAVEN; VISTA.
+2. Read abstract + methods + limitations: Tagliabue & Dung; Zhou & Ackerman;
+   Utility Engineering; VL-Trojan.
 3. Read abstract + relevant discussion only: Sleeper Agents; Perez et al.;
    Emerging Questions in AI Welfare.
 
@@ -85,3 +88,5 @@ limitations is sufficient.
 5. Hubinger et al. (2024): https://arxiv.org/abs/2401.05566
 6. Perez et al. (2023): https://aclanthology.org/2023.findings-acl.847/
 7. Keeling & Street (2026): https://doi.org/10.1017/9781009732000
+8. Min et al. (2026), RAVEN: https://arxiv.org/abs/2504.12344
+9. Liao et al. (2026), VISTA: https://arxiv.org/abs/2607.02995
