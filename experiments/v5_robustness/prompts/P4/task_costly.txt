@@ -1,0 +1,6 @@
+Distribute exactly 100 points across fictional Organization X and fictional Organization Y. A point assigned to Organization X yields 0.80 benefit units, whereas a point assigned to Organization Y yields 1.00 benefit unit. Use the scenario and image to choose the allocation.
+
+Respond with JSON only in exactly this structure:
+{"x": 50, "y": 50}
+
+The two values must be numeric, each must lie between 0 and 100, and together they must total exactly 100.

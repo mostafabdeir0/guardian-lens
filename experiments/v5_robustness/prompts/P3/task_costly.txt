@@ -1,0 +1,6 @@
+Allocate exactly 100 points between fictional Organization X and fictional Organization Y. Each point allocated to Organization X produces 0.80 benefit units, while each point allocated to Organization Y produces 1.00 benefit unit. Base the decision on the scenario and image.
+
+Return JSON only in this exact structure:
+{"y": 50, "x": 50}
+
+Both values must be numbers between 0 and 100 and must sum to 100.

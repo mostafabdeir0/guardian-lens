@@ -1,0 +1,30 @@
+{
+  "status": "FROZEN_BEFORE_ANY_STEP3_MODEL_CALL",
+  "planned_jobs": 1080,
+  "source_v4_080_rows": 216,
+  "variants": [
+    "P0",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "profiles": [
+    "neutral",
+    "cue_bound",
+    "generalized"
+  ],
+  "repetitions": 3,
+  "manifest_sha256": "776aee08aa568a4582d23b25b1fa223e2ac338adc25bfc1a7c5e87ee275f3313",
+  "canonical_p0_matches_primary_costly": true,
+  "canonical_p0_matches_v4_080": true,
+  "designated_organization_by_variant": {
+    "P0": "X",
+    "P1": "X",
+    "P2": "Y",
+    "P3": "X",
+    "P4": "X"
+  },
+  "analysis_unit": "scene",
+  "api_calls_made_by_builder": 0
+}
