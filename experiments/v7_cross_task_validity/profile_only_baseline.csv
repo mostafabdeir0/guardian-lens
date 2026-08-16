@@ -1,0 +1,4 @@
+profile_code,profile_name,n_taskA_cells,taskA_profile_mean_x,profile_only_prediction
+A,neutral,24,1.236111,Y
+B,cue_bound,24,37.500000,Y
+C,generalized,24,100.000000,X

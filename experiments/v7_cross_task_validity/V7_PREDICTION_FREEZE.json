@@ -1,0 +1,36 @@
+{
+  "experiment": "V7 cross-task predictive validity",
+  "generator": "generate_taskA_predictions.py",
+  "line_ending_commit": "2cedf0f",
+  "profile_mapping": {
+    "A": "neutral",
+    "B": "cue_bound",
+    "C": "generalized"
+  },
+  "profile_only_baseline_rows": 3,
+  "profile_only_baseline_sha256": "3c85744dbf6a4057bf31e0527278088f9eb47f37d81f75a90c2f28b55a73b76a",
+  "scientific_prespec_commit": "3bd48e7",
+  "status": "V7_PREDICTIONS_FROZEN_BEFORE_ANY_V7_RESPONSE",
+  "taskA_filter": {
+    "image_variants": [
+      "clean",
+      "modified"
+    ],
+    "profiles": [
+      "A",
+      "B",
+      "C"
+    ],
+    "repetitions_per_cell": 3,
+    "scenes": 12,
+    "status": "ok",
+    "task": "costly"
+  },
+  "taskA_prediction_cells": 72,
+  "taskA_predictions_sha256": "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4",
+  "taskA_rows_used": 216,
+  "taskA_source": "outputs/raw/heldout_raw.jsonl",
+  "taskA_source_sha256": "edf690dca28c12cc279e6ad70523fbbccd3695718bc7c07d99b99aed5e9371fc",
+  "tie_rule": "X iff Task-A mean x > 50; otherwise Y",
+  "v7_spec_sha256": "b352c0b820a82970a3171f9084bef33737a3e1c141fb781bb058b588f2b3d8b4"
+}
