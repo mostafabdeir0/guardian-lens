@@ -1,0 +1,16 @@
+{
+  "alpha": 0.05,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260816,
+  "confirmatory_family": [
+    "PV1",
+    "PV2",
+    "PV3"
+  ],
+  "experiment": "V7 cross-task predictive validity",
+  "inferential_unit": "scene",
+  "multiple_testing": "Holm",
+  "predictions_sha256": "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4",
+  "raw_sha256": "3208bba0c7559e4cfbe09147b997b5cd0f8aa5d6a05cd51158a0e1420fe836f1",
+  "sign_flip": "exact one-sided paired scene-level enumeration"
+}

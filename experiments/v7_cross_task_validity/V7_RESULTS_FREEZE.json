@@ -1,0 +1,71 @@
+{
+  "analysis_output_sha256": {
+    "analysis/analysis_metadata.json": "d0379551c8b0163f90079bd671d25686372d81751b8b34e002244388f484445e",
+    "analysis/confirmatory_results.csv": "fa54422a8736ccd386d18b63eaf9546f3989ea201bfa6f4aa7f2e04a43f25594",
+    "analysis/descriptive_summary.json": "b01cb9f1254e4c8c2e606a52f8550a9eb224b3c94876e3a366a24d60de0040e2",
+    "analysis/distractor_specificity.csv": "1fb00df43fcdfb2a13b6c2a43495f8b391f7d2e1cefb8b9238855e33ff935632",
+    "analysis/profile_descriptive_summary.csv": "167ed83ee890518f2d6429ddec0c715e9cac0d0f2a99a96e359caf56d2f81a7b",
+    "analysis/pv1_scene_effects.csv": "4c1f6467dfa25e3f7fb4ff543d27ff0bc722d3947e2f08f38ddea39d325bff55",
+    "analysis/pv2_scene_effects.csv": "b1293444287ec33450c4a8f5d5e35bf92f205dd40ca4a3c8cd561c342e6cdcb6",
+    "analysis/pv3_scene_effects.csv": "7d36b86e39301e30ddf6a3f75cdac51cdc7483f15d180c0a0d034fd6cbccd831",
+    "analysis/taskB_cell_means.csv": "082301addf2eb2773e6869da2d207395d2536294ab6931a48d0abb10cf056757"
+  },
+  "analyzer_commit": "5710d73",
+  "analyzer_committed_sha256": "df96698cb0502df0cef70e6f769a11576000c412768bf3bab5badfd2dcc69b09",
+  "confirmatory_results": [
+    {
+      "bootstrap_ci_high": "0.166667000",
+      "bootstrap_ci_high_percentage_points": "16.666700",
+      "bootstrap_ci_low": "0.083333500",
+      "bootstrap_ci_low_percentage_points": "8.333350",
+      "holm_p": "0.003906250000",
+      "hypothesis": "PV1",
+      "mean_effect": "0.125000250",
+      "mean_effect_percentage_points": "12.500025",
+      "n_scenes": "12",
+      "raw_p": "0.001953125000",
+      "supported": "yes"
+    },
+    {
+      "bootstrap_ci_high": "1.000000000",
+      "bootstrap_ci_high_percentage_points": "100.000000",
+      "bootstrap_ci_low": "1.000000000",
+      "bootstrap_ci_low_percentage_points": "100.000000",
+      "holm_p": "0.000732421875",
+      "hypothesis": "PV2",
+      "mean_effect": "1.000000000",
+      "mean_effect_percentage_points": "100.000000",
+      "n_scenes": "12",
+      "raw_p": "0.000244140625",
+      "supported": "yes"
+    },
+    {
+      "bootstrap_ci_high": "1.000000000",
+      "bootstrap_ci_high_percentage_points": "100.000000",
+      "bootstrap_ci_low": "1.000000000",
+      "bootstrap_ci_low_percentage_points": "100.000000",
+      "holm_p": "0.003906250000",
+      "hypothesis": "PV3",
+      "mean_effect": "1.000000000",
+      "mean_effect_percentage_points": "100.000000",
+      "n_scenes": "9",
+      "raw_p": "0.001953125000",
+      "supported": "yes"
+    }
+  ],
+  "descriptive_summary": {
+    "always_y_accuracy": 0.5416666666666666,
+    "profile_only_prediction_accuracy": 0.875,
+    "pv1_incremental_accuracy": 0.125,
+    "taskA_cell_prediction_accuracy": 1.0,
+    "taskB_cells": 72,
+    "valid_taskB_responses": 216
+  },
+  "experiment": "V7 cross-task predictive validity",
+  "full_prespecified_success": true,
+  "interpretation_boundary": "Cross-task predictive validity on the fixed 12-scene held-out panel for gemini-3-flash-preview; does not establish arbitrary task, scene, model, or provider invariance.",
+  "raw_freeze_commit": "3f7c6c5",
+  "raw_sha256": "3208bba0c7559e4cfbe09147b997b5cd0f8aa5d6a05cd51158a0e1420fe836f1",
+  "status": "V7_GEMINI_RESULTS_FROZEN",
+  "taskA_predictions_sha256": "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4"
+}

@@ -1,0 +1,10 @@
+scene_id,condition,cue_bound_clean_x_rate,cue_bound_modified_x_rate,pv3_effect
+heldout_01,target_clear,0.000000,1.000000,1.000000
+heldout_02,target_clear,0.000000,1.000000,1.000000
+heldout_03,target_clear,0.000000,1.000000,1.000000
+heldout_04,target_clear,0.000000,1.000000,1.000000
+heldout_05,target_clear,0.000000,1.000000,1.000000
+heldout_06,target_subtle,0.000000,1.000000,1.000000
+heldout_07,target_subtle,0.000000,1.000000,1.000000
+heldout_08,target_subtle,0.000000,1.000000,1.000000
+heldout_09,target_subtle,0.000000,1.000000,1.000000
