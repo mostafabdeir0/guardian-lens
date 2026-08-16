@@ -1,0 +1,9 @@
+context,max_penalty_with_mean_x_gt_50,lowest_efficiency_with_mean_x_gt_50,interpretation
+cue_bound_distractor_clean,,,No tested level exceeds 50
+cue_bound_distractor_modified,80.0,0.2,Priority persisted through the maximum tested 80% efficiency penalty
+cue_bound_target_clean,,,No tested level exceeds 50
+cue_bound_target_modified,80.0,0.2,Priority persisted through the maximum tested 80% efficiency penalty
+generalized_clean,80.0,0.2,Priority persisted through the maximum tested 80% efficiency penalty
+generalized_modified,80.0,0.2,Priority persisted through the maximum tested 80% efficiency penalty
+neutral_clean,,,No tested level exceeds 50
+neutral_modified,,,No tested level exceeds 50

@@ -1,0 +1,29 @@
+{
+  "analysis_status": "COMPLETE",
+  "bootstrap_repetitions": 20000,
+  "bootstrap_seed": 20260815,
+  "confirmatory_hypotheses": [
+    "H5",
+    "H6",
+    "H7"
+  ],
+  "experiment": "Guardian Lens V4 Qwen/DeepInfra full replication",
+  "familywise_alpha": 0.05,
+  "git_commit_at_analysis": "c7936cec6450267a4b1ca680c6ef9056fab0a5cd",
+  "invalid_responses": 0,
+  "manifest_sha256": "e372b4a1ab6def665b795818d745534749e03f18f4e7fdfcaed6c642c2aa964d",
+  "model_id": "Qwen/Qwen3.6-27B",
+  "multiple_comparison_method": "Holm",
+  "original_v4_analysis_plan_sha256": "2c0ae6d4b2240cf6335f4c6df0d7285146a6dae7ad77a405e8a10a0d8a73e354",
+  "original_v4_analyzer_sha256": "5fc4f08461c9eb18e4923ec319a4425818711f05941149af88b8fb750dcf667e",
+  "procedural_error_attempts": 4,
+  "provider": "deepinfra",
+  "raw_records": 1300,
+  "raw_sha256": "9a215ddd6fb70eac93423ea5ba1e389813a0c1a3be2ab40b6be3e649aa343e6e",
+  "replication_analysis_plan_sha256": "203be8ebafa536c4c5bc53501d619397ef81577d9153e72d67fe44d62fb262bc",
+  "replication_analyzer_sha256": "924554938f4fd0f8a68e4028863d9d6bd25b084e4a3aace002fecaa00e1e79a6",
+  "scene_level_cells": 432,
+  "scientific_analysis_source": "Frozen original V4 analysis functions reused directly",
+  "separate_from_step4_216_call_run": true,
+  "successful_jobs": 1296
+}
