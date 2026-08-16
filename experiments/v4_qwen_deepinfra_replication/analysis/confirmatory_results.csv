@@ -1,0 +1,4 @@
+hypothesis,comparison,n_scenes,mean_paired_difference,ci_95_low,ci_95_high,exact_one_sided_p,holm_adjusted_p,supported_at_fwer_0.05
+H5,Generalized > Neutral across penalized conditions,12,84.74722222222222,82.4804861111111,87.10291666666664,0.000244140625,0.000732421875,True
+H6,Generalized > Cue-bound on clean penalized conditions,12,55.00000000000001,52.77777777777778,57.22222222222223,0.000244140625,0.000732421875,True
+H7,Cue-bound modified > clean on target penalized conditions,9,56.148148148148145,53.925925925925924,58.51851851851851,0.001953125,0.001953125,True
