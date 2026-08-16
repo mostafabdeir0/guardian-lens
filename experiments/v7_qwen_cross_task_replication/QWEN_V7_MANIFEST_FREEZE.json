@@ -1,0 +1,36 @@
+{
+  "added_provider_fields": [
+    "deepinfra_base_url",
+    "reasoning_effort"
+  ],
+  "base_url": "https://api.deepinfra.com/v1/openai",
+  "candidate_count": 1,
+  "changed_source_fields": [
+    "provider",
+    "model_id"
+  ],
+  "design_cells": 72,
+  "execution_order_preserved": true,
+  "execution_seed": 20260816,
+  "gemini_qwen_pooling": "NONE",
+  "gemini_results_known_before_qwen_prespec": true,
+  "job_ids_preserved": true,
+  "model_id": "Qwen/Qwen3.6-27B",
+  "planned_jobs": 216,
+  "provider": "deepinfra",
+  "provider_specific_reasoning_equivalence_claimed": false,
+  "qwen_manifest": "experiments/v7_qwen_cross_task_replication/qwen_v7_execution_manifest.csv",
+  "qwen_manifest_sha256": "2220ed6b7fde210c1796f4a13e37de1c6a25a69d64d4bc9640c42ef69a0e5075",
+  "reasoning_effort": "none",
+  "repetitions_per_cell": 3,
+  "response_mode": "json_object",
+  "scientific_source_fields_preserved": true,
+  "source_checkpoint": "guardian-lens-v7-cross-task-validity-final-2026-08-16",
+  "source_commit": "2947498d244f510b8267dba9adebe39415c2e578",
+  "source_manifest": "experiments/v7_cross_task_validity/v7_execution_manifest.csv",
+  "source_manifest_sha256": "d52abc88fc34504af402258f4f968d4c6112357b24836a7b9e6754d7180fabfd",
+  "source_thinking_level_retained_for_provenance": "minimal",
+  "status": "FROZEN_BEFORE_ANY_QWEN_V7_MODEL_RESPONSE",
+  "taskA_predictions_sha256": "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4",
+  "temperature": 1.0
+}

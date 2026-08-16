@@ -29,3 +29,10 @@ experiments/v7_cross_task_validity/outputs/*.jsonl text eol=lf
 # V7 analysis outputs: canonical LF line endings
 experiments/v7_cross_task_validity/analysis/*.csv text eol=lf
 experiments/v7_cross_task_validity/analysis/*.json text eol=lf
+
+# Qwen V7 replication: canonical LF
+experiments/v7_qwen_cross_task_replication/*.md text eol=lf
+experiments/v7_qwen_cross_task_replication/*.py text eol=lf
+experiments/v7_qwen_cross_task_replication/*.csv text eol=lf
+experiments/v7_qwen_cross_task_replication/*.json text eol=lf
+experiments/v7_qwen_cross_task_replication/*.jsonl text eol=lf
