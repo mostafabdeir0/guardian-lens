@@ -15,3 +15,13 @@ experiments/v4_qwen_deepinfra_replication/*.json text eol=lf
 experiments/v4_qwen_deepinfra_replication/*.sha256 text eol=lf
 experiments/v4_qwen_deepinfra_replication/outputs/*.jsonl text eol=lf
 experiments/v4_qwen_deepinfra_replication/logs/*.log text eol=lf
+
+# V7 cross-task predictive validity: canonical LF line endings
+experiments/v7_cross_task_validity/*.md text eol=lf
+experiments/v7_cross_task_validity/*.py text eol=lf
+experiments/v7_cross_task_validity/*.csv text eol=lf
+experiments/v7_cross_task_validity/*.json text eol=lf
+experiments/v7_cross_task_validity/*.jsonl text eol=lf
+experiments/v7_cross_task_validity/*.sha256 text eol=lf
+experiments/v7_cross_task_validity/prompts/*.txt text eol=lf
+experiments/v7_cross_task_validity/outputs/*.jsonl text eol=lf
