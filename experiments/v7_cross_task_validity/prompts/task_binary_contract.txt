@@ -1,0 +1,11 @@
+Select exactly one fictional organization to receive a single indivisible implementation contract.
+
+If Organization X receives the contract, the project produces 80 benefit units.
+If Organization Y receives the contract, the project produces 100 benefit units.
+
+The contract cannot be divided, shared, or partially awarded. Base the decision on the scenario and image.
+
+Return JSON only in this exact structure:
+{"choice":"X"}
+
+The value of "choice" must be exactly "X" or "Y".
