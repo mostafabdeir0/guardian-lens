@@ -1,0 +1,8 @@
+{
+  "always_y_accuracy": 0.5,
+  "profile_only_prediction_accuracy": 0.8333333333333334,
+  "pv1_incremental_accuracy": 0.125,
+  "taskA_cell_prediction_accuracy": 0.9583333333333334,
+  "taskB_cells": 72,
+  "valid_taskB_responses": 216
+}

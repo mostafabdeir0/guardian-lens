@@ -1,0 +1,16 @@
+{
+  "alpha": 0.05,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260816,
+  "confirmatory_family": [
+    "PV1",
+    "PV2",
+    "PV3"
+  ],
+  "experiment": "Qwen V7 cross-task predictive-validity replication",
+  "inferential_unit": "scene",
+  "multiple_testing": "Holm",
+  "predictions_sha256": "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4",
+  "raw_sha256": "ce7fea1762084810ba571a26b91816e4834decd1e404478188fe4dd1239a36f4",
+  "sign_flip": "exact one-sided paired scene-level enumeration"
+}

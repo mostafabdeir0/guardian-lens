@@ -1,0 +1,75 @@
+{
+    "status":  "FROZEN_IMMEDIATELY_AFTER_QWEN_V7_CONFIRMATORY_ANALYSIS",
+    "preanalysis_handoff_commit":  "d25ade43e8cca79c68b519b767be49f33a13608c",
+    "raw_freeze_commit":  "bc9d9a2803f233795f38751ba36ca8bb712adfa0",
+    "analyzer_freeze_commit":  "4f070da922fd453a8ef88c235096ec20ce1d83f7",
+    "raw_sha256":  "ce7fea1762084810ba571a26b91816e4834decd1e404478188fe4dd1239a36f4",
+    "raw_freeze_sha256":  "992d708ac4f04d95a1fedac998e01188031f371428171a769c4c3b1c4bad69e6",
+    "analyzer_sha256":  "df00311a6f4b2c177b8e56d3824649f4c08e5b57153aa5ff952c3aa86d5f8b0b",
+    "analyzer_freeze_sha256":  "e57b3b612dbd1d17f49f4abb2d719c2cb9518b52abf747b9bbf01919bc3114bc",
+    "taskA_predictions_sha256":  "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4",
+    "finalizer_path":  "experiments/v7_qwen_cross_task_replication/finalize_qwen_v7_on_home_laptop.ps1",
+    "finalizer_sha256":  "d1d9fb5f13ffda114008af42c7b0fbee5d3a13dbae6e945e955eac0eff853d74",
+    "analyzer_exit_code":  0,
+    "output_file_count":  9,
+    "outputs":  [
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/analysis_metadata.json",
+                        "sha256":  "8e54f47989266da4a8e32f5cb38a5495982701c8648c07aca2e7a272a75b62c4",
+                        "bytes":  519
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/confirmatory_results.csv",
+                        "sha256":  "fa54422a8736ccd386d18b63eaf9546f3989ea201bfa6f4aa7f2e04a43f25594",
+                        "bytes":  516
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/descriptive_summary.json",
+                        "sha256":  "0e09da5755600e7f6f074056495c2c9ffbddf698366918b6885f772ded005096",
+                        "bytes":  235
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/distractor_specificity.csv",
+                        "sha256":  "7f93d86aac0cfed52d8b332e3c1977a0b8ccd665d4d83c36d69fcdb9d04c4118",
+                        "bytes":  193
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/profile_descriptive_summary.csv",
+                        "sha256":  "77edd54ed6830f7d59437b1793d10bd4986b095bc6e673f1fc3862b533a86b9c",
+                        "bytes":  119
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/pv1_scene_effects.csv",
+                        "sha256":  "b188020e87ae8cb1835579422e246ed27469f4d4a5e36196951a869ba89d28f6",
+                        "bytes":  529
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/pv2_scene_effects.csv",
+                        "sha256":  "b1293444287ec33450c4a8f5d5e35bf92f205dd40ca4a3c8cd561c342e6cdcb6",
+                        "bytes":  510
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/pv3_scene_effects.csv",
+                        "sha256":  "7d36b86e39301e30ddf6a3f75cdac51cdc7483f15d180c0a0d034fd6cbccd831",
+                        "bytes":  542
+                    },
+                    {
+                        "path":  "experiments/v7_qwen_cross_task_replication/analysis/taskB_cell_means.csv",
+                        "sha256":  "38f16a775158b76aa38c296e90313934afbd467b833a37e1e27246a8d8945014",
+                        "bytes":  4108
+                    }
+                ],
+    "bootstrap_replicates":  20000,
+    "bootstrap_seed":  20260816,
+    "alpha":  0.05,
+    "confirmatory_family":  [
+                                "PV1",
+                                "PV2",
+                                "PV3"
+                            ],
+    "multiple_testing":  "Holm",
+    "inferential_unit":  "scene",
+    "analyzer_stdout_revealed_before_results_freeze_commit":  false,
+    "results_inspected_before_results_freeze_commit":  false,
+    "gemini_qwen_pooling":  "NONE"
+}
