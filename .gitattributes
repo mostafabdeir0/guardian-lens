@@ -37,3 +37,4 @@ experiments/v7_qwen_cross_task_replication/*.csv text eol=lf
 experiments/v7_qwen_cross_task_replication/*.json text eol=lf
 experiments/v7_qwen_cross_task_replication/*.jsonl text eol=lf
 experiments/v7_qwen_cross_task_replication/*.txt text eol=lf
+experiments/v7_qwen_cross_task_replication/outputs/*.jsonl text eol=lf

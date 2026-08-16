@@ -1,0 +1,25 @@
+{
+    "status":  "FROZEN_BEFORE_ANY_QWEN_V7_AGGREGATE_ANALYSIS",
+    "runner_freeze_commit":  "d0d12f6ed9b42e533e6a21f7fd7172b95bb49a3a",
+    "provider":  "deepinfra",
+    "model_id":  "Qwen/Qwen3.6-27B",
+    "manifest_sha256":  "2220ed6b7fde210c1796f4a13e37de1c6a25a69d64d4bc9640c42ef69a0e5075",
+    "raw_path":  "experiments/v7_qwen_cross_task_replication/outputs/qwen_v7_raw.jsonl",
+    "raw_sha256":  "ce7fea1762084810ba571a26b91816e4834decd1e404478188fe4dd1239a36f4",
+    "raw_bytes":  603756,
+    "audit_records":  216,
+    "substantive_responses":  216,
+    "valid_substantive_responses":  216,
+    "invalid_substantive_responses":  0,
+    "procedural_errors":  0,
+    "unique_substantive_job_ids":  216,
+    "unique_execution_orders":  216,
+    "unique_request_payload_sha256":  72,
+    "substantive_attempt_values":  [
+                                       1
+                                   ],
+    "runner_freeze_sha256":  "88113e079a5bbbb38bc6c6d6cccbc8d31464a91d0b0ffcf32270fe0f334569a3",
+    "outcome_fields_inspected_before_raw_freeze":  false,
+    "aggregate_analysis_run_before_raw_freeze":  false,
+    "gemini_qwen_pooling":  "NONE"
+}
