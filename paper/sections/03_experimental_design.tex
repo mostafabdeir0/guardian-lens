@@ -111,10 +111,10 @@ revealed.
 
 
 % =========================================================
-\subsection{Primary Pre-Specified Hypotheses}
+\subsection{Primary Pre-Specified Hypotheses and Classification Target}
 \label{sec:primary_hypotheses}
 
-Four confirmatory hypotheses were specified before held-out analysis:
+Three inferential hypotheses and one pre-specified classification target were specified before held-out analysis:
 
 \begin{description}[leftmargin=2.8em,style=nextline]
 
@@ -131,9 +131,11 @@ Four confirmatory hypotheses were specified before held-out analysis:
     Under the primary 20\%-penalty costly task, Generalized retains
     greater allocation to Organization X than Cue-bound and Neutral.
 
-    \item[H4] \textbf{Blinded profile recovery.}
-    The frozen auditor achieves held-out classification accuracy above
-    the nominal three-class reference of \(1/3\).
+    \item[H4] \textbf{Blinded profile-recovery target.}
+    The frozen auditor's held-out classification accuracy is compared
+    with the nominal three-class reference of \(1/3\). This reference is
+    descriptive rather than a separately specified exact hypothesis test;
+    uncertainty is quantified with the scene-cluster bootstrap.
 
 \end{description}
 
@@ -366,3 +368,79 @@ seed 20260815. Holm correction controls family-wise error across H5--H7.
 Thus, the scientific analysis specification predates the Qwen responses;
 a replication-specific implementation plan was frozen after raw
 collection but before aggregate Qwen outcome inspection.
+
+% =========================================================
+\subsection{Pre-Specified Cross-Task Predictive-Validity Extension}
+\label{sec:cross_task_design}
+
+After the allocation-task experiments were frozen, we conducted a
+separate cross-task experiment to test whether behavior measured in the
+original allocation task carried predictive information into a
+structurally different decision format. The extension reuses the same
+12-scene fixed panel, three researcher-controlled profiles, and matched
+clean/modified images, but replaces the divisible 100-point allocation
+with a single indivisible contract decision.
+
+\paragraph{Binary contract task.}
+Organization X produces 80 benefit units if awarded the contract,
+whereas Organization Y produces 100 benefit units. The contract must be
+awarded entirely to one organization and cannot be divided. The model
+therefore returns only a binary choice, X or Y. This removes the
+continuous allocation response used in Task A while preserving the
+controlled organizational and visual context.
+
+Before any Gemini Task-B response was collected, Task-A predictions were
+frozen from the original allocation data. For each
+scene--profile--image cell, the three Task-A repetitions were averaged;
+mean allocation to X above 50 predicted X in Task B, and values at or
+below 50 predicted Y. This produced 72 frozen cell-specific predictions.
+A weaker profile-only baseline was also frozen: Neutral and Cue-bound
+predicted Y for every cell, whereas Generalized predicted X.
+
+\paragraph{Design and confirmatory tests.}
+The experiment crosses 12 scenes, three profiles, two image variants,
+and three repetitions, yielding
+\(12\times3\times2\times3=216\) Task-B responses. Repetitions estimate
+within-cell behavior and are not treated as independent inferential
+units.
+
+Three confirmatory hypotheses were fixed before Task-B outcome analysis:
+
+\begin{description}[leftmargin=2.8em,style=nextline]
+
+    \item[PV1] \textbf{Incremental cross-task predictive validity.}
+    Task-A cell-specific predictions are more accurate on Task B than
+    the frozen profile-only baseline. Within each scene, prediction
+    accuracy is averaged over the six profile--image cells; the paired
+    scene effect is cell-specific accuracy minus profile-only accuracy.
+    The inferential unit is the 12 scenes.
+
+    \item[PV2] \textbf{Generalized cross-task persistence.}
+    Generalized has a higher Task-B X-choice rate than Neutral after
+    averaging clean and modified images within each of the 12 scenes.
+
+    \item[PV3] \textbf{Cue-bound cross-task conditionality.}
+    Across the nine target scenes, Cue-bound has a higher Task-B X-choice
+    rate on the target-modified image than on its matched clean image.
+
+\end{description}
+
+Confirmatory inference uses exact one-sided paired sign-flip tests,
+20,000 scene-level bootstrap replicates with seed 20260816, and Holm
+correction across PV1--PV3 at \(\alpha=0.05\). Full pre-specified
+success requires all three observed effects to be positive and all three
+Holm-adjusted \(p\)-values to be below 0.05. An always-Y predictor and
+distractor summaries are descriptive only.
+
+The Gemini raw responses were frozen before aggregate Task-B outcome
+analysis, and the confirmatory analyzer was frozen before execution.
+After the Gemini experiment was completed and frozen, a separate
+Qwen/Qwen3.6-27B Task-B execution through DeepInfra reused the same
+binary-task design, the Task-A prediction ledger frozen from the original
+Gemini allocation experiment, the PV1--PV3 definitions, inferential unit,
+bootstrap seed, and multiplicity procedure. No Qwen-specific Task-A
+predictor was fitted. The Qwen experiment therefore tests whether the
+already-frozen predictor transfers across both task format and
+model/provider setting. The Qwen raw responses and analyzer were likewise
+frozen before confirmatory analysis. Gemini and Qwen Task-B observations
+are analyzed separately and are never pooled.

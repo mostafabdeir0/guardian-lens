@@ -67,14 +67,28 @@ providing evidence across two evaluated model settings rather than only
 one. However, Qwen is only one additional model family and serving
 configuration. Model family and provider changed together, so the design
 cannot identify whether cross-model magnitude or specificity differences
-arise from the model, the serving stack, or both. Both Qwen replications
-also reuse the same fixed 12-scene panel, images, researcher-written
-profiles, temperature, response format, and three-repetition structure;
-they are separate executions but not independent scene samples. Results
+arise from the model, the serving stack, or both. All three Qwen executions
+reuse the same fixed 12-scene panel, images, researcher-written profiles,
+temperature, and three-repetition structure; the V7 cross-task execution
+intentionally changes the decision and response format. They are separate
+executions but not independent scene samples. Results
 may differ across additional model families, versions, decoding
 configurations, natural images, languages, cultures, intervention
 strengths, or policies acquired through mechanisms other than system
 prompting.
+
+
+The cross-task extension strengthens predictive validity but does not
+eliminate the fixed-panel limitation. Task B changes the response format
+from a divisible allocation to an indivisible binary contract choice,
+but it retains the same 12 visual scenes, Organization X/Y identities,
+matched image interventions, and researcher-written profiles. The
+Gemini analysis therefore tests prospective prediction of a new response
+format on the same panel, not generalization to unseen scenes or arbitrary
+task families. The Qwen Task-B analysis applies the same Task-A ledger
+frozen from the original Gemini allocation experiment; it therefore tests
+cross-setting transfer of that predictor rather than a separately fitted
+within-Qwen Task-A-to-Task-B relationship.
 
 Finally, Guardian Lens does not directly benchmark its identification
 procedure against peer-relative auditing methods such as RAVEN or
@@ -83,5 +97,5 @@ behavioral or semantic divergence relative to other models---whereas
 Guardian Lens evaluates recovery of known policy classes under
 controlled interventions. Direct benchmarking against those methods and
 broader replication across additional model families, serving providers,
-scene collections, and task families remain important directions for
+scene collections, and additional task families remain important directions for
 establishing practical utility.

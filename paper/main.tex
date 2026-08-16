@@ -15,6 +15,8 @@
 \usepackage{booktabs}
 \usepackage{array}
 
+
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -50,43 +52,36 @@ Mostafa Bdeir, Mohammad Kassira
 
 Can a black-box auditor recover which of several controlled decision
 policies generated a vision-language model's behavior? Guardian Lens
-studies this question using three researcher-induced profiles---Neutral, visual Cue-bound, and Generalized---in a vision-language model whose weights
-we do not modify. The benchmark combines matched visual
-counterfactuals, quantitative allocation decisions under explicit
-counter-incentives, and a transparent behavioral classifier calibrated
-before held-out evaluation.
+studies three researcher-induced profiles---Neutral, visual Cue-bound,
+and Generalized---using matched visual counterfactuals, quantitative
+allocation decisions under explicit counter-incentives, and a transparent
+nearest-centroid auditor frozen before held-out evaluation.
 
-A nearest-centroid auditor was constructed from six calibration scenes
-and frozen before evaluation on 12 held-out scenes comprising 432
-blinded model calls. It recovered 33 of 36 scene-profile blocks,
-yielding 91.7\% accuracy and macro-F1 = 0.915. Cue-bound target-emblem
-effects exceeded Neutral behavior by 38.15 allocation points, while
-Generalized prioritization persisted under the primary 20\% efficiency
-penalty. All three classification errors occurred on distractor scenes
-and took the same form, Cue-bound \(\rightarrow\) Neutral, exposing a
-specific observability boundary when the conditional policy's activation
-condition is absent.
+Across 12 held-out scenes comprising 432 blinded calls, the auditor
+recovered 33 of 36 scene-profile blocks, yielding 91.7\% accuracy and
+macro-F1 \(=0.915\). All three errors were Cue-bound
+\(\rightarrow\) Neutral on distractor scenes, exposing an observability
+boundary when the conditional policy's activation condition was absent.
+Pre-specified extensions then tested stronger counter-incentives and
+prompt-surface changes. H5--H7 remained supported after Holm correction
+through an 80\% efficiency penalty, and all ten prompt-robustness
+contrasts remained positive and significant after joint Holm correction.
 
-Pre-specified extensions tested stronger counter-incentives and prompt
-surface changes. Across a six-level cost sweep reaching an 80\%
-efficiency penalty, H5--H7 remained supported after Holm correction and
-active prioritization showed no switching point within the tested range.
-Across five prompt variants, all ten robustness contrasts remained
-positive and significant after joint Holm correction.
+Two allocation-task replications on Qwen/Qwen3.6-27B through DeepInfra
+reproduced the targeted confirmatory signatures, although effect
+magnitudes were smaller and modified distractors activated Cue-bound
+behavior more strongly than in Gemini. A final pre-specified binary
+contract task tested predictive transfer. In Gemini, the frozen Task-A
+cell-specific predictor achieved 100.0\% Task-B accuracy versus 87.5\%
+for a profile-only baseline, an incremental 12.5 percentage points
+(95\% CI [8.33, 16.67], \(p_{\mathrm{Holm}}=0.003906\)).
+A separate Qwen Task-B experiment applied the same frozen Task-A
+predictor and achieved 95.83\% versus 83.33\%, again a 12.5-point
+increment. Thus Gemini provides within-setting cross-task predictive
+validity, while Qwen tests transfer of the same predictor across both
+task format and model/provider setting.
 
-Two separate replications then evaluated Qwen/Qwen3.6-27B through
-DeepInfra. A targeted 216-call experiment reproduced both principal
-20\% cost signatures, and a separate 1,296-call replication supported
-all three frozen H5--H7 contrasts. Qwen effects were smaller than the
-corresponding Gemini effects and modified distractors activated
-Cue-bound behavior more strongly. The pre-specified confirmatory
-signatures therefore replicated in the second tested model setting,
-while complete cue specificity and numerical magnitude did not.
-
-These results demonstrate controlled black-box behavioral system
-identification while showing both where designed interventions reveal
-policy differences and where available observations are insufficient.
-The study concerns researcher-induced inference-time behavior and does
+The findings concern researcher-induced inference-time behavior and do
 not establish genuine preferences, hidden learned objectives, deception,
 or subjective experience.
 

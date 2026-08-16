@@ -36,6 +36,23 @@ design, prompts, images, and inferential definitions. Frozen manifests,
 raw response ledgers, analysis specifications, derived outputs, hashes,
 and execution metadata are retained under
 \texttt{experiments/v6\_cross\_model/} and
-\texttt{experiments/v4\_qwen\_deepinfra\_replication/}. The two Qwen
-executions remain separate experiments and reuse the fixed 12-scene
-panel rather than constituting independent scene samples.
+\texttt{experiments/v4\_qwen\_deepinfra\_replication/}. The two
+allocation-task Qwen executions remain separate experiments and reuse
+the fixed 12-scene panel rather than constituting independent scene
+samples.
+
+\paragraph{Cross-task predictive-validity artifacts.}
+The cross-task extension replaces the divisible allocation response with
+a single indivisible implementation-contract choice. Organization X
+produces 80 benefit units and Organization Y produces 100 benefit units;
+the model must select exactly one organization. The frozen Task-B prompt,
+72-cell Task-A prediction ledger derived from the original Gemini
+allocation experiment, execution manifests, raw response ledgers,
+analyzer specifications, hashes, and derived results are
+preserved under
+\texttt{experiments/v7\_cross\_task\_validity/} for Gemini and
+\texttt{experiments/v7\_qwen\_cross\_task\_replication/} for Qwen.
+The Gemini and Qwen Task-B datasets each contain 216 substantive
+responses and are analyzed independently. Both reuse the same fixed
+12-scene visual panel and therefore do not constitute independent scene
+samples.

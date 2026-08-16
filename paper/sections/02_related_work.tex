@@ -31,6 +31,14 @@ are researcher-induced decision policies, and our objective is to
 determine whether those policies can be identified from their observable
 consequences.
 
+
+The cross-task extension addresses the related question of whether a
+behavioral measurement made under one decision format prospectively
+predicts behavior under another. Because our policy classes are
+researcher-controlled rather than naturally elicited utilities, this
+experiment complements rather than directly contradicts prior findings
+of task-dependent utility--behavior gaps.
+
 The elicitation procedure itself can also substantially affect measured
 behavior. \citet{mahajan2026mind} show that stated--revealed preference
 correlations change markedly depending on whether models are forced to
@@ -40,6 +48,18 @@ behavioral conclusions depend on the interventions and response
 constraints used to produce the observations. Guardian Lens therefore
 uses fixed quantitative response schemas, matched interventions, and a
 pre-specified feature representation.
+
+Related robustness work further shows that semantically preserving prompt
+changes can alter model outputs. \citet{haller2024yes} evaluate response
+stability across 500 paraphrases of questionnaire statements and find that
+even models with high aggregate stability can reverse responses for
+particular paraphrases. \citet{mcilroyyoung2024order} study a complementary
+source of instability---order dependence---showing that model outputs can
+change when semantically equivalent subsequences are reordered. These
+findings motivate our pre-specified prompt-surface controls over task
+wording and ordering. We evaluate whether the qualitative behavioral
+signatures survive those transformations rather than assuming numerical
+invariance.
 
 \paragraph{Concept-conditioned black-box auditing.}
 The closest methodological line of work concerns black-box detection of

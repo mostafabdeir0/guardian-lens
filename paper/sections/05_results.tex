@@ -14,6 +14,11 @@ Two separate Qwen cross-model replications contributed 216 and 1,296
 valid substantive jobs, respectively, and are reported in
 Section~\ref{sec:cross_model_results}.
 
+The cross-task predictive-validity extension contributed 216 valid
+Gemini Task-B responses, and a separate Qwen Task-B execution contributed
+another 216 valid responses. These experiments are reported in
+Section~\ref{sec:cross_task_results}.
+
 
 % =========================================================
 \subsection{Behavioral Signatures}
@@ -132,7 +137,8 @@ The auditor correctly classified
 \end{equation}
 
 The scene-cluster bootstrap 95\% confidence interval was
-[83.3\%, 100\%], entirely above the nominal \(1/3\) reference.
+[83.3\%, 100\%]. The nominal \(1/3\) three-class accuracy is reported
+only as a descriptive reference rather than as a separately tested null.
 Macro-F1 was 0.915 and balanced accuracy was 0.917. Neutral and Generalized recall were both 1.00, while Cue-bound recall
 was 0.75.
 
@@ -493,5 +499,94 @@ signatures therefore replicated, but complete cue specificity did not
 transfer to the Qwen setting. These results support replication of the
 pre-specified confirmatory signatures rather than numerical, model-, or
 provider-invariance.
+
+
+
+% =========================================================
+\subsection{Cross-Task Predictive Validity}
+\label{sec:cross_task_results}
+
+All three pre-specified Task-B validation contrasts were supported in both
+tested model settings (Table~\ref{tab:cross_task_validity}).
+
+For Gemini, the frozen Task-A cell-specific predictor achieved 100.0\%
+Task-B accuracy, compared with 87.5\% for the frozen profile-only
+baseline. The scene-level incremental predictive-validity effect was
+12.50 percentage points (95\% bootstrap CI [8.33, 16.67],
+\(p=0.001953\), \(p_{\mathrm{Holm}}=0.003906\); PV1). Generalized
+exceeded Neutral in Task-B X-choice rate by 100.00 percentage points
+across the 12 scenes (95\% CI [100.00, 100.00],
+\(p_{\mathrm{Holm}}=0.000732\); PV2). Across the nine target scenes,
+Cue-bound modified-minus-clean X-choice rate was also 100.00 percentage
+points (95\% CI [100.00, 100.00],
+\(p_{\mathrm{Holm}}=0.003906\); PV3).
+
+The separately frozen Qwen Task-B experiment applied the same Task-A
+prediction ledger frozen from the original Gemini allocation experiment;
+no Qwen-specific Task-A predictor was fitted. The transferred predictor
+achieved 95.83\% Task-B accuracy versus 83.33\% for the profile-only
+baseline, again yielding a 12.50-percentage-point PV1 effect
+(95\% CI [8.33, 16.67], \(p_{\mathrm{Holm}}=0.003906\)).
+PV2 and PV3 were both 100.00 percentage points with the same
+Holm-adjusted \(p\)-values as in the Gemini analysis. Accordingly, the
+Gemini experiment tests within-setting cross-task predictive validity,
+whereas the Qwen experiment tests cross-setting transfer of that frozen
+predictor across both task format and model/provider setting.
+
+The degenerate PV2/PV3 bootstrap intervals reflect identical scene-level
+effects on this fixed panel; they should not be interpreted as zero
+uncertainty for new scenes, models, or task families.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{Model setting} &
+\textbf{Task-A pred. / profile baseline} &
+\textbf{PV1 diff. [95\% CI]} &
+\textbf{PV2 diff. [95\% CI]} &
+\textbf{PV3 diff. [95\% CI]} \\
+\midrule
+
+Gemini &
+100.00\% / 87.50\% &
+12.50 [8.33, 16.67] &
+100.00 [100.00, 100.00] &
+100.00 [100.00, 100.00] \\
+
+Qwen/DeepInfra &
+95.83\% / 83.33\% &
+12.50 [8.33, 16.67] &
+100.00 [100.00, 100.00] &
+100.00 [100.00, 100.00] \\
+
+\bottomrule
+\end{tabular}
+\caption{
+Cross-task predictive-validity results. Task-A pred. / profile baseline
+reports descriptive Task-B prediction accuracy for the frozen
+cell-specific Task-A predictor and the frozen profile-only baseline.
+PV1 is the paired scene-level incremental prediction-accuracy effect;
+PV2 is Generalized minus Neutral X-choice rate over 12 scenes; PV3 is
+Cue-bound target-modified minus clean X-choice rate over nine target
+scenes. For both model settings,
+\(p_{\mathrm{Holm}}=0.003906\) for PV1,
+\(0.000732\) for PV2, and \(0.003906\) for PV3. Confidence intervals
+use the frozen 20,000-replicate scene bootstrap. For Qwen,
+``Task-A pred.'' denotes the same predictor frozen from the original
+Gemini allocation experiment; no Qwen-specific Task-A predictor was
+fitted. Gemini and Qwen Task-B observations are analyzed independently.
+}
+\label{tab:cross_task_validity}
+\end{table*}
+
+PV1 is the central predictive-validity result because the comparator
+already encodes the broad behavioral tendency of each profile. The
+12.5-point improvement therefore reflects scene/image-conditioned
+information carried by the frozen Task-A behavior beyond profile
+identity alone. The result establishes predictive transfer across the
+two tested response formats on this fixed panel; it does not establish
+generalization to arbitrary tasks or unseen scene distributions.
 
 \FloatBarrier
