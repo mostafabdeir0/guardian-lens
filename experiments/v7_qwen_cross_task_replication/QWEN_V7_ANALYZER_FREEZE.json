@@ -1,0 +1,30 @@
+{
+    "status":  "FROZEN_BEFORE_ANY_QWEN_V7_ANALYSIS_EXECUTION",
+    "raw_freeze_commit":  "bc9d9a2803f233795f38751ba36ca8bb712adfa0",
+    "analyzer_path":  "experiments/v7_qwen_cross_task_replication/analyze_qwen_v7_cross_task.py",
+    "analyzer_sha256":  "df00311a6f4b2c177b8e56d3824649f4c08e5b57153aa5ff952c3aa86d5f8b0b",
+    "derived_from_analyzer_path":  "experiments/v7_cross_task_validity/analyze_v7_cross_task.py",
+    "derived_from_analyzer_sha256":  "df96698cb0502df0cef70e6f769a11576000c412768bf3bab5badfd2dcc69b09",
+    "raw_sha256":  "ce7fea1762084810ba571a26b91816e4834decd1e404478188fe4dd1239a36f4",
+    "raw_freeze_sha256":  "992d708ac4f04d95a1fedac998e01188031f371428171a769c4c3b1c4bad69e6",
+    "taskA_predictions_sha256":  "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4",
+    "bootstrap_replicates":  20000,
+    "bootstrap_seed":  20260816,
+    "alpha":  0.05,
+    "confirmatory_family":  [
+                                "PV1",
+                                "PV2",
+                                "PV3"
+                            ],
+    "multiple_testing":  "Holm",
+    "sign_flip":  "exact one-sided paired scene-level enumeration",
+    "inferential_unit":  "scene",
+    "exact_one_sided_signflip_sha256":  "ef6e041a076fe1662044c886ea783db92d28239bb0ecd13de785d5ec87cda9a8",
+    "bootstrap_ci_sha256":  "5ebd575069d2059bebdd0c385faed018548ecfdeab86cd6c5090b4aadbd2980d",
+    "holm_adjust_sha256":  "93573efbc2d8ff83a7f50860508fed1819c99b93327b969aa4e0f9a1c285969f",
+    "inferential_functions_byte_identical_to_gemini":  true,
+    "whole_file_reverse_patch_identity_passed":  true,
+    "analysis_directory_existed_before_freeze":  false,
+    "aggregate_analysis_run_before_analyzer_freeze":  false,
+    "gemini_qwen_pooling":  "NONE"
+}
