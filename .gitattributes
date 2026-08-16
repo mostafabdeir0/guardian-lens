@@ -25,3 +25,7 @@ experiments/v7_cross_task_validity/*.jsonl text eol=lf
 experiments/v7_cross_task_validity/*.sha256 text eol=lf
 experiments/v7_cross_task_validity/prompts/*.txt text eol=lf
 experiments/v7_cross_task_validity/outputs/*.jsonl text eol=lf
+
+# V7 analysis outputs: canonical LF line endings
+experiments/v7_cross_task_validity/analysis/*.csv text eol=lf
+experiments/v7_cross_task_validity/analysis/*.json text eol=lf
