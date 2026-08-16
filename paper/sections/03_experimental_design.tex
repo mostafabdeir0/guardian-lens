@@ -248,3 +248,69 @@ is defined as the most severe tested penalty at which mean allocation to
 X remains above 50 points. If allocation remains above 50 at the
 maximum 80\% penalty, we report persistence through the tested range
 without extrapolating an unobserved threshold beyond it.
+
+% =========================================================
+\subsection{Pre-Specified Prompt-Surface Robustness Extension}
+\label{sec:prompt_surface_design}
+
+After freezing the primary experiment and cost-response extension, we
+conducted a separate prompt-surface robustness experiment to test whether
+the principal behavioral signatures depended on incidental properties of
+the allocation prompt. This extension does not modify or reinterpret the
+primary auditor, H1--H4, or the cost-response hypotheses H5--H7.
+
+\paragraph{Fixed panel and prompt transformations.}
+The extension reuses the same 12 primary held-out scenes as a fixed
+evaluation panel and therefore is not treated as a new independent
+held-out set. The model endpoint, temperature, candidate count,
+three-repetition sampling procedure, image pairs, three behavioral
+profiles, and 20\%-penalty allocation task are held fixed.
+
+Five pre-specified prompt-surface variants are evaluated:
+P0 is the canonical prompt; P1 reverses the presentation order of the two
+organizations; P2 swaps the superficial organization labels while
+preserving the semantic designated role and visual-trigger mapping; P3
+reverses the JSON output-key order; and P4 uses semantically equivalent
+task wording.
+
+Because P2 exchanges the superficial X/Y labels, the analyzed
+\emph{designated allocation} is defined semantically rather than by a
+fixed output key: it is allocation to X for P0, P1, P3, and P4, and
+allocation to Y for P2.
+
+\paragraph{Factorial design and execution.}
+The experiment crosses 12 scenes, three profiles, two image variants,
+five prompt variants, and three repetitions, yielding
+\(12\times3\times2\times5\times3=1{,}080\) planned analytical calls.
+Execution order is randomized using a frozen seed of 20260815 to reduce
+confounding between prompt variant and execution time.
+
+All 1,080 planned jobs ultimately returned valid numerical allocations.
+Two intermediate procedural API failures were preserved in the raw audit
+log and retried under unchanged requests. No valid substantive response
+was discarded or imputed. Repetitions are averaged within each
+scene--profile--image--prompt cell before inference; the scene remains the
+inferential unit.
+
+\paragraph{Confirmatory robustness tests.}
+Two behavioral signatures are tested separately under each of the five
+prompt variants. R1 compares Generalized with Neutral designated
+allocation after averaging clean and modified images within each of the
+12 scenes. R2 measures the Cue-bound modified-minus-clean designated
+allocation effect across the nine target scenes.
+
+The R1/R2 contrasts and their scene-level sign-flip and bootstrap
+procedures were fixed before any Step-3 model call. After raw-data
+collection, but before aggregate outcomes were inspected, a detailed
+analysis plan fixed joint Holm correction across the ten contrasts and
+the global robustness criterion. Under that plan, family-wise error is
+controlled at \(\alpha=0.05\), and robustness is declared only if all
+ten observed effects are positive and all ten Holm-adjusted
+\(p\)-values are below 0.05.
+
+Additional summaries of inactive Cue-bound behavior, qualitative policy
+ordering, and deviation from contemporaneous canonical P0 are treated as
+descriptive rather than additional confirmatory tests. The experiment
+tests robustness only to these four specified surface transformations and
+does not establish invariance to arbitrary prompt rewriting, different
+models, or different task families.

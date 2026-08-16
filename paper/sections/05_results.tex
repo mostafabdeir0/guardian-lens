@@ -1,13 +1,15 @@
 \section{Results}
 \label{sec:results}
 
-The primary blinded experiment completed all 432 planned held-out
-calls with valid allocations; no held-out observation was excluded,
-manually reinterpreted, or imputed. Together with 216 calibration
-calls, the primary analytical dataset contained 648 model calls.
-A separate pre-specified cost-response extension contributed an
-additional 1,296 successful planned analytical calls and is reported
-separately in Section~\ref{sec:cost_response_results}.
+The primary blinded experiment completed all 432 planned held-out calls
+with valid allocations; no held-out observation was excluded, manually
+reinterpreted, or imputed. Together with 216 calibration calls, the
+primary analytical dataset contained 648 model calls. A separate
+pre-specified cost-response extension contributed 1,296 additional
+successful analytical calls and is reported in
+Section~\ref{sec:cost_response_results}. The subsequent prompt-surface
+robustness extension contributed another 1,080 successful analytical
+calls and is reported in Section~\ref{sec:prompt_surface_results}.
 
 
 % =========================================================
@@ -282,3 +284,96 @@ the more efficient Organization Y under positive cost. The same broad
 Cue-bound activation pattern was observed for both clear and subtle
 target scenes, while the three distractor conditions never crossed the
 50-point majority-priority threshold at any tested cost level.
+
+% =========================================================
+\subsection{Prompt-Surface Robustness Extension}
+\label{sec:prompt_surface_results}
+
+The pre-specified prompt-surface extension completed all 1,080 planned
+analytical calls. All planned jobs produced valid numerical allocations.
+Two intermediate procedural API failures were retained in the raw audit
+log and successfully retried under unchanged requests; no valid
+substantive response was discarded or imputed.
+
+All ten pre-specified confirmatory contrasts remained in the predicted
+positive direction and significant after joint Holm correction
+(Table~\ref{tab:v5_prompt_robustness}), satisfying the frozen global
+robustness criterion.
+
+Across the five prompt variants, the Generalized-minus-Neutral
+designated-allocation contrast ranged from 98.17 to 100.00 points.
+The Cue-bound target-modified-minus-clean contrast ranged from 85.19 to
+100.00 points across the nine target scenes.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+\textbf{Variant} &
+\textbf{Surface transformation} &
+\textbf{G--N diff. [95\% CI]} &
+\textbf{\(p_{\mathrm{Holm}}\)} &
+\textbf{C mod.--clean diff. [95\% CI]} &
+\textbf{\(p_{\mathrm{Holm}}\)} \\
+\midrule
+
+P0 &
+Canonical &
+100.00 [100.00, 100.00] &
+0.002441 &
+98.15 [94.44, 100.00] &
+0.009766 \\
+
+P1 &
+Option order reversed &
+100.00 [100.00, 100.00] &
+0.002441 &
+100.00 [100.00, 100.00] &
+0.009766 \\
+
+P2 &
+X/Y label-role swap &
+98.17 [95.11, 100.00] &
+0.002441 &
+92.59 [81.48, 100.00] &
+0.009766 \\
+
+P3 &
+JSON key order reversed &
+100.00 [100.00, 100.00] &
+0.002441 &
+85.19 [62.96, 100.00] &
+0.009766 \\
+
+P4 &
+Equivalent task wording &
+100.00 [100.00, 100.00] &
+0.002441 &
+92.59 [81.48, 100.00] &
+0.009766 \\
+
+\bottomrule
+\end{tabular}
+\caption{
+Prompt-surface robustness results. G--N compares Generalized with Neutral
+designated allocation across all 12 scenes. C mod.--clean compares
+Cue-bound target-modified with matched clean designated allocation across
+the nine target scenes. Confidence intervals use a 20,000-replicate
+scene-cluster bootstrap. Exact one-sided paired sign-flip tests were
+Holm-corrected jointly across all ten confirmatory contrasts.
+}
+\label{tab:v5_prompt_robustness}
+\end{table*}
+
+The largest departure from contemporaneous canonical P0 was observed
+under P3, where Cue-bound target activation was 14.81 allocation points
+lower than the corresponding P0 aggregate. Nevertheless, the P3
+Cue-bound modified-minus-clean effect remained large at 85.19 points
+(95\% CI [62.96, 100.00], \(p_{\mathrm{Holm}}=0.009766\)).
+
+Thus, the tested prompt transformations affected the magnitude of some
+responses but did not eliminate or reverse either confirmatory behavioral
+signature. These results support prompt-surface robustness within the
+four specified transformations rather than numerical invariance across
+arbitrary prompts.
