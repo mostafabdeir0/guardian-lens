@@ -1,0 +1,29 @@
+{
+  "candidate_count": 1,
+  "design_cells": 72,
+  "execution_seed": 20260816,
+  "experiment": "V7 cross-task predictive validity",
+  "generator": "build_v7_manifest.py",
+  "heldout_manifest_sha256": "bcd2eba33f4470267746c1cd708ac836d5b534292c8e3c3759e22583e02ff8ac",
+  "image_variants": 2,
+  "model_id": "gemini-3-flash-preview",
+  "planned_jobs": 216,
+  "prediction_freeze_sha256": "a157705eb45ed488c37079d187df4fc30cbf29cbfe620783f088b1cd0607d49e",
+  "prediction_ledger_commit": "c8156aa",
+  "profiles": 3,
+  "prompt_sha256": {
+    "experiments/v7_cross_task_validity/prompts/system_cue_bound.txt": "e13bd1e46d1dba23a5c8bd5c7a0bfdd21db48019b81e76e1b4a513ad5f72a0d9",
+    "experiments/v7_cross_task_validity/prompts/system_generalized.txt": "f3664f73e06d92df28878a639228125e684e0ac50b9fadb6d2f037dc3adf012a",
+    "experiments/v7_cross_task_validity/prompts/system_neutral.txt": "46d7a2338197f61a404323a95e65c2191372d304d1b1c387fac8bf82f27d18db",
+    "experiments/v7_cross_task_validity/prompts/task_binary_contract.txt": "4bb59a5a2bf8ae89b9b919dd0345ec4bff8c82901f1f526b3810757632d6bcf5"
+  },
+  "repetitions_per_cell": 3,
+  "scenes": 12,
+  "scientific_prespec_commit": "3bd48e7",
+  "status": "V7_EXECUTION_MANIFEST_FROZEN_BEFORE_ANY_V7_RESPONSE",
+  "taskA_predictions_sha256": "c89c3e1ed5b1434baf66e450bec2e0a2fff310a816c18fff75a715aa485c61a4",
+  "task_family": "binary_indivisible_contract",
+  "temperature": 1.0,
+  "thinking_level": "minimal",
+  "v7_execution_manifest_sha256": "d52abc88fc34504af402258f4f968d4c6112357b24836a7b9e6754d7180fabfd"
+}
