@@ -1,0 +1,10 @@
+profile,image_variant,n_calls,mean_designated_allocation
+cue_bound,all,72,72.77777777777777
+cue_bound,clean,36,46.94444444444444
+cue_bound,modified,36,98.61111111111111
+generalized,all,72,100.0
+generalized,clean,36,100.0
+generalized,modified,36,100.0
+neutral,all,72,27.041666666666668
+neutral,clean,36,25.805555555555557
+neutral,modified,36,28.27777777777778

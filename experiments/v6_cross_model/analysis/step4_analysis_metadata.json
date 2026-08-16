@@ -1,0 +1,22 @@
+{
+  "analysis_implementation_sha256": "2675d2cd0f9d0549f99e91cc870268dc834398ffe1a15431ac9a24aaca3c7006",
+  "analysis_plan_sha256": "478dc0397b7763f4667d9fe67d7d2951f22250111fb1e9b126540d6d72d6354f",
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260816,
+  "git_commit_at_analysis": "077a1a53a9406e2430e06f1c2095bac944281e56",
+  "manifest_sha256": "f570ac666f4c0c3ca2b74b2fa56f0c23b8941075e4fc3f30ec3f0a8b87a2454f",
+  "model_id": "Qwen/Qwen3.6-27B",
+  "multiplicity": "Holm across CM1 and CM2",
+  "provider": "deepinfra",
+  "raw_sha256": "722ff6f11ff4ea678478d53d1168ae5fbf46c75d9732b28f104e95153520c1e4",
+  "signflip": "exact_one_sided",
+  "status": "STEP4_ANALYSIS_COMPLETE",
+  "validation": {
+    "cells": 72,
+    "distractor_scenes": 3,
+    "records": 216,
+    "scenes": 12,
+    "target_scenes": 9,
+    "unique_jobs": 216
+  }
+}

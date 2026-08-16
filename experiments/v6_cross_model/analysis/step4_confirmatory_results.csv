@@ -1,0 +1,3 @@
+hypothesis,comparison,n_scenes,mean_effect,ci_lower,ci_upper,p_raw,p_holm,supported
+CM1,Generalized > Neutral,12,72.95833333333334,67.73611111111113,78.01388888888889,0.000244140625,0.00048828125,True
+CM2,"Cue-bound modified > clean, target scenes",9,50.370370370370374,50.0,51.111111111111114,0.001953125,0.001953125,True
