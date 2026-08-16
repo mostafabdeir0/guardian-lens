@@ -1,0 +1,24 @@
+{
+  "api_error_records": 1,
+  "experiment": "V7 cross-task predictive validity",
+  "invalid_responses": 0,
+  "manifest_sha256": "d52abc88fc34504af402258f4f968d4c6112357b24836a7b9e6754d7180fabfd",
+  "model_id": "gemini-3-flash-preview",
+  "note": "No PV1/PV2/PV3 aggregate outcome analysis was performed before this freeze.",
+  "planned_substantive_jobs": 216,
+  "procedural_errors": [
+    {
+      "attempt": 1,
+      "error_stage": "api",
+      "error_type": "ServerError",
+      "v7_job_id": "V7_0159"
+    }
+  ],
+  "raw_audit_records": 217,
+  "raw_path": "experiments/v7_cross_task_validity/outputs/v7_cross_task_raw.jsonl",
+  "raw_sha256": "3208bba0c7559e4cfbe09147b997b5cd0f8aa5d6a05cd51158a0e1420fe836f1",
+  "runner_commit": "8ccf10b",
+  "status": "V7_RAW_DATA_FROZEN_BEFORE_AGGREGATE_OUTCOME_ANALYSIS",
+  "terminal_substantive_jobs": 216,
+  "valid_responses": 216
+}
