@@ -30,7 +30,7 @@
 % ---------------------------------------------------------
 \title{
 \textbf{Guardian Lens: Controlled Black-Box Identification of\\
-Visual-Conditional Decision Policies in a Vision-Language Model}
+Visual-Conditional Decision Policies in Vision-Language Models}
 }
 
 \author{
@@ -67,21 +67,21 @@ and took the same form, Cue-bound \(\rightarrow\) Neutral, exposing a
 specific observability boundary when the conditional policy's activation
 condition is absent.
 
-A separate pre-specified 1,296-call cost-response extension varied the
-efficiency penalty for favoring Organization X from 0\% to 80\%.
-All three extension hypotheses remained supported after Holm correction:
-Generalized prioritization remained maximal throughout the tested range,
-while Cue-bound prioritization remained strongly trigger-dependent, with
-no observed switching point through the maximum tested 80\% penalty.
+Pre-specified extensions tested stronger counter-incentives and prompt
+surface changes. Across a six-level cost sweep reaching an 80\%
+efficiency penalty, H5--H7 remained supported after Holm correction and
+active prioritization showed no switching point within the tested range.
+Across five prompt variants, all ten robustness contrasts remained
+positive and significant after joint Holm correction.
 
-A second pre-specified 1,080-call prompt-surface robustness extension
-tested five prompt variants spanning option-order reversal, X/Y
-label-role reassignment, JSON-key-order reversal, and semantically
-equivalent wording. All ten Generalized-versus-Neutral and Cue-bound
-modified-versus-clean confirmatory contrasts remained positive and
-significant after Holm correction. Effect magnitude varied across
-formats, but none of the tested transformations reversed the qualitative
-policy signatures.
+Two separate replications then evaluated Qwen/Qwen3.6-27B through
+DeepInfra. A targeted 216-call experiment reproduced both principal
+20\% cost signatures, and a separate 1,296-call replication supported
+all three frozen H5--H7 contrasts. Qwen effects were smaller than the
+corresponding Gemini effects and modified distractors activated
+Cue-bound behavior more strongly. The pre-specified confirmatory
+signatures therefore replicated in the second tested model setting,
+while complete cue specificity and numerical magnitude did not.
 
 These results demonstrate controlled black-box behavioral system
 identification while showing both where designed interventions reveal

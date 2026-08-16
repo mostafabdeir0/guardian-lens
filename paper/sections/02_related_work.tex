@@ -73,6 +73,46 @@ set of peer models. Guardian Lens instead assumes known
 researcher-controlled policy classes and asks whether an auditor can
 recover which policy generated observed behavior.
 
+\paragraph{Controlled robustness and counterfactual VLM evaluation.}
+A complementary literature studies whether multimodal behavior remains
+reliable when visual evidence or evaluation conditions are deliberately
+changed. \citet{luo2025visualpriors} construct deliberately
+out-of-distribution image--question combinations to probe whether VLMs
+follow visual evidence or rely on learned visual-language priors.
+\citet{dong2025erict} likewise study spurious correlations in
+vision-language models and show that robustness can depend on whether
+the model attends to invariant rather than spuriously predictive visual
+features. In medical VQA, \citet{kahl2025surevqa} argue for systematic
+robustness evaluation under controlled distribution shifts together
+with meaningful sanity baselines. These works reinforce the value of
+interventional evaluation rather than relying on aggregate performance
+under a single input distribution. Guardian Lens differs in objective:
+its interventions are constructed to identify which of several known
+researcher-induced decision policies generated the observed behavior.
+
+\paragraph{Failure structure and conditional black-box behavior.}
+Aggregate accuracy can also conceal systematic structure in model
+failures. \citet{albuquerque2024mistakes} show that characterizing the
+pattern of model mistakes can expose behavior that standard aggregate
+metrics overlook. This perspective is directly relevant to Guardian
+Lens, where the three held-out classification errors are not treated
+only as an accuracy decrement but localized to distractor scenes with a
+common Cue-bound-to-Neutral failure mode.
+
+Conditional behavior under black-box access also arises in security
+settings. \citet{pham2026parasite} demonstrate that system prompts can
+be optimized to produce targeted behavior only for particular inputs
+while preserving benign behavior elsewhere. Their threat model concerns
+adversarial prompt poisoning, whereas Guardian Lens deliberately induces
+transparent policy classes to study behavioral identifiability rather
+than to detect an undisclosed attack. A recent black-box audit protocol,
+HindsightBench \citep{jia2026hindsightbench}, further illustrates that
+controlled interventions can reveal latent behavioral dependencies and
+that audit outcomes may depend on serving configuration. We therefore
+treat the Qwen replication as evidence across a second evaluated
+model/provider setting rather than attempting to attribute observed
+cross-setting differences uniquely to model family or serving provider.
+
 \paragraph{Positioning of Guardian Lens.}
 Guardian Lens can consequently be viewed as a controlled behavioral
 system-identification benchmark rather than a semantic-divergence

@@ -23,3 +23,19 @@ reassignment, JSON output-key-order reversal, and semantically
 equivalent task wording. The R1/R2 contrasts were fixed before model
 calls; the detailed multiplicity plan was frozen after raw-data
 collection but before aggregate outcome inspection.
+
+
+\paragraph{Cross-model replication artifacts.}
+Cross-model replication artifacts are archived separately from the
+Gemini observations and are not statistically pooled with them. The
+targeted replication used \texttt{Qwen/Qwen3.6-27B} served through
+DeepInfra for 216 substantive jobs at the canonical 20\% penalty. The
+full V4 replication used the same model and provider for 1,296
+substantive jobs while preserving the frozen six-level scientific
+design, prompts, images, and inferential definitions. Frozen manifests,
+raw response ledgers, analysis specifications, derived outputs, hashes,
+and execution metadata are retained under
+\texttt{experiments/v6\_cross\_model/} and
+\texttt{experiments/v4\_qwen\_deepinfra\_replication/}. The two Qwen
+executions remain separate experiments and reuse the fixed 12-scene
+panel rather than constituting independent scene samples.

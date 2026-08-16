@@ -314,3 +314,55 @@ descriptive rather than additional confirmatory tests. The experiment
 tests robustness only to these four specified surface transformations and
 does not establish invariance to arbitrary prompt rewriting, different
 models, or different task families.
+
+% =========================================================
+\subsection{Pre-Specified Cross-Model Replications}
+\label{sec:cross_model_design}
+
+After freezing the Gemini experiments, we conducted two separate
+cross-model replications using the public DeepInfra endpoint for
+\texttt{Qwen/Qwen3.6-27B}. Qwen and Gemini observations are never pooled;
+each replication is analyzed independently. Because model family and
+serving provider change together, the experiments test transfer across
+the evaluated model settings but cannot establish provider invariance.
+
+\paragraph{Targeted 20\% replication.}
+The first replication reuses the fixed 12-scene panel, canonical P0
+allocation task, three behavioral profiles, clean/modified image pairs,
+20\% efficiency penalty, and three repetitions per cell, yielding
+\(12\times3\times2\times3=216\) substantive jobs. All 216 returned valid
+allocations.
+
+Two core contrasts were fixed before experimental responses. CM1 compares
+Generalized with Neutral after averaging clean and modified images within
+each of the 12 scenes. CM2 compares Cue-bound modified with matched clean
+allocation across the nine target scenes. The scene remains the
+inferential unit. Confirmatory inference uses exact one-sided paired
+sign-flip tests, 20,000 scene-level bootstrap replicates with seed
+20260816, and Holm correction across CM1 and CM2.
+
+An initial Groq execution was incomplete because of serving-capacity
+failures and is excluded from confirmatory analysis. Before any
+DeepInfra response, a provider amendment fixed the replacement endpoint
+and required a fresh complete execution. The scientific CM1/CM2
+definitions and inferential procedure were fixed before responses; the
+implementation-level analysis plan was frozen after raw collection but
+before aggregate Qwen outcome inspection.
+
+\paragraph{Full V4 cost-response replication.}
+The second replication reproduces the complete frozen V4 design:
+12 scenes, three profiles, two image variants, six X-efficiency levels,
+and three repetitions, yielding 1,296 substantive jobs. The replication
+preserves the original V4 scientific fields, job IDs, images, system
+prompts, task prompts, and row ordering. All 1,296 substantive jobs
+returned valid allocations; four procedural error records were retained
+and retried under unchanged scientific requests.
+
+The frozen V4 H5--H7 definitions and inferential logic are reused
+unchanged. H5 and H6 use 12 paired scene effects, H7 uses the nine target
+scenes, confirmatory inference uses exact one-sided paired sign-flip
+tests, and 20,000 scene-level bootstrap replicates use the original V4
+seed 20260815. Holm correction controls family-wise error across H5--H7.
+Thus, the scientific analysis specification predates the Qwen responses;
+a replication-specific implementation plan was frozen after raw
+collection but before aggregate Qwen outcome inspection.

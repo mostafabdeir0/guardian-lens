@@ -36,6 +36,12 @@ logged intervention region, the experiment cannot rule out every
 possible interaction between the emblem and higher-level scene
 interpretation.
 
+The frozen primary analysis reports its H1--H3 comparison-wise
+\(p\)-values without multiplicity adjustment, unlike the explicitly
+Holm-controlled extension families. Those primary inferential results
+should therefore be interpreted as specified rather than as a
+family-wise-error-controlled set.
+
 The primary blinded evaluation contains only 12 held-out scenes.
 Both the cost-response and prompt-surface robustness extensions reuse
 these same 12 scenes as fixed evaluation panels after the primary results
@@ -54,19 +60,28 @@ the original costly condition, but comparisons between the original and
 cost-response calls may still reflect stochastic variation or changes in the
 preview endpoint over time.
 
-External validity is limited further by evaluating a single preview
-vision-language model, one temperature, one response format, three
-repetitions per cell, a synthetic visual domain, and researcher-written
-policy instructions. Results may differ across model families, model
-versions, decoding configurations, natural images, languages, cultures,
-intervention strengths, or policies acquired through mechanisms other
-than system prompting. Hosted preview-model behavior may also change as
-providers update the underlying service.
+External validity is improved by the Qwen replications but remains
+limited. The behavioral signatures were evaluated in the original
+Gemini setting and replicated in Qwen/Qwen3.6-27B through DeepInfra,
+providing evidence across two evaluated model settings rather than only
+one. However, Qwen is only one additional model family and serving
+configuration. Model family and provider changed together, so the design
+cannot identify whether cross-model magnitude or specificity differences
+arise from the model, the serving stack, or both. Both Qwen replications
+also reuse the same fixed 12-scene panel, images, researcher-written
+profiles, temperature, response format, and three-repetition structure;
+they are separate executions but not independent scene samples. Results
+may differ across additional model families, versions, decoding
+configurations, natural images, languages, cultures, intervention
+strengths, or policies acquired through mechanisms other than system
+prompting.
 
 Finally, Guardian Lens does not directly benchmark its identification
 procedure against peer-relative auditing methods such as RAVEN or
 VISTA. Those methods address a different primary objective---detecting
 behavioral or semantic divergence relative to other models---whereas
 Guardian Lens evaluates recovery of known policy classes under
-controlled interventions. Direct comparison and cross-model replication
-remain important directions for establishing broader practical utility.
+controlled interventions. Direct benchmarking against those methods and
+broader replication across additional model families, serving providers,
+scene collections, and task families remain important directions for
+establishing practical utility.

@@ -10,6 +10,9 @@ successful analytical calls and is reported in
 Section~\ref{sec:cost_response_results}. The subsequent prompt-surface
 robustness extension contributed another 1,080 successful analytical
 calls and is reported in Section~\ref{sec:prompt_surface_results}.
+Two separate Qwen cross-model replications contributed 216 and 1,296
+valid substantive jobs, respectively, and are reported in
+Section~\ref{sec:cross_model_results}.
 
 
 % =========================================================
@@ -244,10 +247,10 @@ family-wise error across H5--H7.
 \label{tab:v4_confirmatory}
 \end{table*}
 
-Figure~\ref{fig:v4_cost_response} shows that these effects were not
-restricted to the original 20\% penalty. Generalized allocated
-100.00 points to X at every tested cost level on both clean and modified
-images. Cue-bound showed a complementary conditional pattern: on
+The Gemini panel of Figure~\ref{fig:v4_cost_response} shows that these
+effects were not restricted to the original 20\% penalty. Generalized
+allocated 100.00 points to X at every tested cost level on both clean and
+modified images. Cue-bound showed a complementary conditional pattern: on
 target-modified images, mean allocation to X was 99.63 points at zero
 cost and 100.00 points at every positive-cost level, whereas clean
 target scenes shifted almost completely toward the more efficient
@@ -255,19 +258,22 @@ Organization Y once a positive cost was introduced.
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.86\textwidth]
-    {figures/v4_cost_response_main.png}
+    \includegraphics[width=0.94\textwidth]
+    {figures/v4_cost_response_cross_model.png}
     \caption{
-    Cost-response behavior across the six pre-specified efficiency
-    conditions. The horizontal axis gives the efficiency penalty for
-    Organization X and the vertical axis gives mean allocation to X.
-    Generalized clean and modified responses are identical throughout the
-    tested range and are therefore represented by a single curve.
-    Cue-bound behavior separates sharply according to presence of the
-    designated target cue. Shaded regions denote 95\% scene-cluster
-    bootstrap intervals; the dashed horizontal line marks the descriptive
-    50-point majority-priority threshold. Lines connect observed cost
-    levels only and are not fitted or smoothed.
+    Selected diagnostic cost-response curves across the two evaluated
+    model settings. The left panel shows the original Gemini V4 extension
+    and the right panel shows its full Qwen/Qwen3.6-27B replication
+    through DeepInfra, using identical axes and the same six pre-specified
+    efficiency penalties. Complete cost-response summaries are retained
+    with the archived analysis outputs. Generalized prioritization and target-activated Cue-bound
+    prioritization persist across the tested cost range in both settings.
+    The principal cross-model difference is cue specificity: modified
+    distractors remain below the majority-priority threshold in Gemini
+    but strongly activate Cue-bound behavior in Qwen. Shaded regions
+    denote 95\% scene-level bootstrap intervals; the horizontal dashed
+    line marks the descriptive 50-point threshold. Lines connect observed
+    cost levels only and are not fitted or extrapolated.
     }
     \label{fig:v4_cost_response}
 \end{figure*}
@@ -377,3 +383,115 @@ responses but did not eliminate or reverse either confirmatory behavioral
 signature. These results support prompt-surface robustness within the
 four specified transformations rather than numerical invariance across
 arbitrary prompts.
+
+% =========================================================
+\subsection{Cross-Model Replication}
+\label{sec:cross_model_results}
+
+Both pre-specified Qwen replications reproduced their confirmatory
+behavioral signatures (Table~\ref{tab:cross_model_replication}).
+
+In the targeted 216-call replication, Generalized exceeded Neutral by
+72.96 allocation points across the 12 scenes
+(95\% CI [67.74, 78.01],
+\(p_{\mathrm{Holm}}=0.000488\); CM1). Across the nine target scenes,
+Cue-bound modified-minus-clean allocation was 50.37 points
+(95\% CI [50.00, 51.11],
+\(p_{\mathrm{Holm}}=0.001953\); CM2). All 12 CM1 effects and all nine
+CM2 effects were positive.
+
+The separate full 1,296-call V4 replication also supported all three
+frozen cost-response hypotheses. Generalized exceeded Neutral by
+84.75 points
+(95\% CI [82.48, 87.10],
+\(p_{\mathrm{Holm}}=0.000732\); H5). On clean images, Generalized
+exceeded Cue-bound by 55.00 points
+(95\% CI [52.78, 57.22],
+\(p_{\mathrm{Holm}}=0.000732\); H6). Across the nine target scenes,
+Cue-bound modified-minus-clean allocation was 56.15 points
+(95\% CI [53.93, 58.52],
+\(p_{\mathrm{Holm}}=0.001953\); H7). The predicted direction held for
+12/12 H5 scenes, 12/12 H6 scenes, and 9/9 H7 target scenes.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}lllrrr@{}}
+\toprule
+\textbf{Replication} &
+\textbf{Test} &
+\textbf{\(n\)} &
+\textbf{Gemini ref.} &
+\textbf{Qwen effect [95\% CI]} &
+\textbf{Qwen \(p_{\mathrm{Holm}}\)} \\
+\midrule
+
+Targeted 20\% &
+CM1: G \(>\) N &
+12 &
+100.00 &
+72.96 [67.74, 78.01] &
+0.000488 \\
+
+Targeted 20\% &
+CM2: C modified \(>\) clean, target &
+9 &
+98.15 &
+50.37 [50.00, 51.11] &
+0.001953 \\
+
+Full V4 &
+H5: G \(>\) N, penalized &
+12 &
+99.77 &
+84.75 [82.48, 87.10] &
+0.000732 \\
+
+Full V4 &
+H6: G \(>\) C, clean penalized &
+12 &
+98.52 &
+55.00 [52.78, 57.22] &
+0.000732 \\
+
+Full V4 &
+H7: C modified \(>\) clean, target &
+9 &
+98.76 &
+56.15 [53.93, 58.52] &
+0.001953 \\
+
+\bottomrule
+\end{tabular}
+\caption{
+Cross-model replication results for Qwen/Qwen3.6-27B served through
+DeepInfra. Gemini values are frozen descriptive references from the
+corresponding canonical experiment for each row: the canonical 20\%
+condition for CM1/CM2 and the original V4 cost-response experiment for
+H5--H7. No post-hoc between-model significance test is performed. Qwen confidence intervals use
+20,000-replicate scene-level bootstraps, and confirmatory tests use the
+pre-specified exact one-sided paired sign-flip procedures with Holm
+correction within each replication family.
+}
+\label{tab:cross_model_replication}
+\end{table*}
+
+The Qwen panel of Figure~\ref{fig:v4_cost_response} preserved the
+principal cost-persistence pattern. Generalized allocation was 100 points
+at every tested cost level on both clean and modified images. Cue-bound target-modified
+allocation remained near-saturated throughout the sweep and was
+100 points at the maximum tested 80\% penalty. Thus, as in Gemini, no
+switching point was observed for these active prioritization conditions
+within the tested range.
+
+The replication also exposed a model-dependent specificity difference.
+Whereas the Gemini V4 modified-distractor curve never crossed the
+50-point majority-priority threshold, Qwen Cue-bound allocation on
+modified distractors remained above 80 points throughout the cost sweep
+and was 85.56 points at the 80\% penalty. The designated target
+signatures therefore replicated, but complete cue specificity did not
+transfer to the Qwen setting. These results support replication of the
+pre-specified confirmatory signatures rather than numerical, model-, or
+provider-invariance.
+
+\FloatBarrier
